@@ -3,6 +3,15 @@
   font-family: "Manrope", sans-serif;
 }
 
-h1{
-    font-family: "Manrope", sans-serif;
+:root {
+  --color-1: #edff00;
+  --color-2: #7bafd4;
+  --color-3: #9ad9b3;
+
+  --font-1: "Manrope", sans-serif;
+  --main-text-color: #111;
+}
+
+h1 {
+  font-family: "Manrope", sans-serif;
 }
