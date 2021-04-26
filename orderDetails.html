@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order details</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="orderDetails">
+
+    <div>
+    <a class="backArrow" href="#">
+      <img src="images/SVG/arrow.svg" />
+      <p>Back to basket</p>
+    </a>
+    </div>
+
+    <div class="logIn">
+      <p>Do you have an account? <span>Log in!</span></p>
+    </div>
+
+    <section id="shoppingbagDetails">
+      <div class="shoppingBagTitle">
+        <h2>SHOPPING BAG</h2>
+        <a href="#"><button class="editButton">EDIT</button></a>
+      </div>
+
+      <div class="orderSummary">
+        <div class="orderItem">
+          <div class="bagproductImg">
+            <img
+              src="https://anasofich.github.io/SILFEN-website/photos/bibbi-nylon-blue.jpg"
+            />
+          </div>
+          <div class="bagproductInfo">
+            <h3 class="bagName">Bibbi Nylon</h3>
+            <p>Color: <span class="bagColor">light blue</span></p>
+            <p>Quantity: <span class="bagQuantity">2</span></p>
+            <p class="bagproductPrice">1200 DKK</p>
+            <div class="lineS"></div>
+          </div>
+        </div>
+
+        <div class="orderItem">
+          <div class="bagproductImg">
+            <img
+              src="https://anasofich.github.io/SILFEN-website/photos/bibbi-nylon-green.jpg"
+            />
+          </div>
+          <div class="bagproductInfo">
+            <h3 class="bagName">Bibbi Nylon</h3>
+            <p>Color: <span class="bagColor">green</span></p>
+            <p>Quantity: <span class="bagQuantity">1</span></p>
+            <p class="bagproductPrice">600 DKK</p>
+            <div class="lineS"></div>
+          </div>
+        </div>
+
+        <div class="lineL"></div>
+
+        <div class="orderPrice">
+            <div class="priceText">
+                <p>Order value</p>
+                <p>Delivery</p>
+                <p class="subtotal">Subtotal</p>
+            </div>
+            <div class="priceAmount">
+                <p class="orderValue">1800 DKK</p>
+                <p class="delivery">FREE</p>
+                <p class="subtotal">1800 DKK</p>
+            </div>
+          </p>
+        </div>
+
+        <div class="couponDiv">
+        <input type="text" name="coupon" placeholder="COUPON CODE">
+            <button>Apply coupon</button>
+        </div>
+      </div>
+    </section>
+
+<section id="paymentForm">
+    <form class="paymentForm" name="paymentForm" autocomplete="on">
+        <div class="shippingDetails">
+            <h2>SHIPPING DETAILS</h2>
+        <label for="firstName">First name</label>
+        <input type="text" name="firstName" id="firstName" required>
+
+        <label for="lastName">Last name</label>
+        <input type="text" name="lastName" id="lastName" required>
+
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" required>
+
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" required>
+
+
+        <label for="country">Country/region</label>
+        <select name="country" id="country">
+            <option>Denmark</option>
+            <option>Germany</option>
+            <option>Sweden</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+        </select>
+
+        <label for="phoneNumber">Phone number</label>
+        <input type="tel" name="phoneNumber" id="phoneNumber" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required>
+    </div>
+
+    <div class="deliveryForm">
+        <h2>DELIVERY</h2>
+        <input type="radio" id="pickUp" name="pickUp">
+        <label for="pickUp">Standard pick-up location<br><span>Free 2-3 days</span></label><br>
+        <input type="radio" id="standardHome" name="standardHome">
+        <label for="standardHome">Standard home delivery<br><span>Free 2-3 days</span></label><br>
+        <input type="radio" id="expressHome" name="expressHome">
+        <label for="expressHome">Express home delivery<br><span>100 DKK 1-2 days</span></label>
+    </div>
+
+    <div class="paymentForm2">
+        <h2>PAYMENT</h2>
+        <h3>BILLING ADDRESS</h3>
+        <input type="radio" id="same" name="same">
+        <label for="same">Same as shipping address</span></label><br>
+        <input type="radio" id="different" name="different">
+        <label for="different">Use a different billing address</span></label><br>
+        
+        <div class="paymentMethod">
+        <h3>PAYMENT METHOD</h3>
+        <h4>CREDIT/DEBIT CARD</h4>
+        <label for="cardNumber">Card number</label>
+        <input type="number" name="cardNumber" id="cardNumber" required>
+
+        <label>Expiry date <br>
+            <select name="month" id="month">
+                <option>Month</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
+            <select name="year" id="year">
+                <option>Year</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+            </select>
+        </label>
+        
+
+        <label for="nameCard">Name on card</label>
+        <input type="text" name="nameCard" id="nameCard" required>
+
+        <label for="CVV">CVV</label>
+        <input type="password" name="CVV" id="CVV" required>
+    </div>
+    </div>
+
+    <input class="placeOrder" type="submit" value="PLACE ORDER">
+
+    </form>
+</section>
+
+
+  </body>
+</html>
