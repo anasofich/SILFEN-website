@@ -1,0 +1,8 @@
+@font-face {
+  src: url(fonts/Manrope-VariableFont_wght.ttf);
+  font-family: "Manrope", sans-serif;
+}
+
+h1{
+    font-family: "Manrope", sans-serif;
+}
