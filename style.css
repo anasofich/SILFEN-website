@@ -19,6 +19,7 @@
 footer {
   background-color: var(--color-2);
   text-align: center;
+  padding-top: 8%;
 }
 
 #newsletter {
@@ -26,6 +27,7 @@ footer {
   width: 80%;
   padding-top: 5%;
   margin-left: 10%;
+  overflow: hidden;
   height: 20vh;
   box-shadow: 5px 5px 0px 0px #edff00, -12px 14px 15px 3px rgba(237, 255, 0, 0);
 }
@@ -33,9 +35,9 @@ footer {
 #newsletter p {
   font-family: var(--font-1);
   font-size: 1rem;
-  width: 70%;
+  width: 73%;
   padding-left: 15%;
-  padding-bottom: 3%;
+  padding-bottom: 4%;
 }
 
 #newsletter .input-group {
@@ -44,20 +46,31 @@ footer {
 
 .signUp {
   background-color: rgb(0, 0, 0);
-  border-radius: 50%;
+  border-radius: 2em;
+  border-color: #7bafd400;
   padding: 10px 20px;
   color: white;
+  transition: all 0.2s;
+}
+
+.signUp:hover {
+  background-color: var(--color-1);
 }
 
 #footerSome {
   padding-top: 10%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+#footerSome a {
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 #footerLinks {
   padding-top: 6%;
-  padding-bottom: 6%;
+  padding-bottom: 12%;
 }
 
 #footerLinks a {
