@@ -296,3 +296,35 @@ a {
   margin-left: 0.8rem;
   padding: 0;
 }
+
+@media only screen and (min-width: 900px) {
+  .orderSummary {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #shoppingbagDetails {
+    display: flex;
+    justify-content: center;
+  }
+
+  .items,
+  .itemsTwo {
+    margin: 2rem;
+  }
+
+  .bagOne {
+    width: 15rem;
+  }
+  .similar {
+    font-size: 2rem;
+  }
+
+  .orderSummary {
+    margin-top: 0;
+  }
+
+  .shoppingBag {
+    margin-top: 0;
+  }
+}
