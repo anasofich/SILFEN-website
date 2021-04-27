@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*    outline: 1px dashed green;*/
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    display: block;
+    max-width: 200px;
+    /* max-width: 100%;
+    height: auto; */
+    box-shadow: 0px 3px 10px 0px rgb(0 0 0 / 16%);
+    /* border-bottom: 2px orange solid; */
+}
+
+li {
+    list-style-type: none;
+    white-space: nowrap; /* so that the words in li will not wrap and will always be in one line */
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 290px));
+    gap: 2.5rem;
+    /* margin-left: 3rem;
+    margin-right: 3rem; */
+
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content_grid {
+    display: grid;
+    grid-template-columns: 300px 50px auto;
+    grid-template-rows: 270px 50px auto;
+
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 3px purple;
+}
+
+.filtering {
+    height: 500px;
+    max-width: 300px;
+    border: blue 2px solid;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+#filter-type_of_bag {
+    border: red 2px solid;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    border-bottom: rgba(0, 0, 0, 0.15) solid 3px;
+
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    align-items: flex-start;
+}
+
+@media (max-width: 1400px) {
+    #content_grid {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 270px 50px auto;
+        max-width: calc(100% - 100px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    #content_grid {
+        max-width: 100%;
+        grid-template-rows: 170px 50px auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .filtering {
+        width: 300px;
+        max-width: calc(100% - 50px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* grid-template-columns: repeat(3, 1fr); */
+/* justify-self: center; */
