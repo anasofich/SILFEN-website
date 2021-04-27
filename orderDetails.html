@@ -10,16 +10,19 @@
   <body id="orderDetails">
 
     <div>
-    <a class="backArrow" href="#">
-      <img src="images/SVG/arrow.svg" />
-      <p>Back to basket</p>
-    </a>
+      <a class="backArrow" href="index.html">
+          <div class="arrowBox">
+        <img src="images/SVG/arrow.svg" />
+    </div>
+        <p>Back to shop</p>
+      </a>
     </div>
 
     <div class="logIn">
       <p>Do you have an account? <span>Log in!</span></p>
     </div>
 
+    <section id="orderFlow">
     <section id="shoppingbagDetails">
       <div class="shoppingBagTitle">
         <h2>SHOPPING BAG</h2>
@@ -106,6 +109,9 @@
             <option>United States</option>
         </select>
 
+        <label for="postCode">Postcode</label>
+        <input type="number" name="postCode" id="postCode" required>
+
         <label for="phoneNumber">Phone number</label>
         <input type="tel" name="phoneNumber" id="phoneNumber" required>
 
@@ -133,7 +139,12 @@
         
         <div class="paymentMethod">
         <h3>PAYMENT METHOD</h3>
-        <h4>CREDIT/DEBIT CARD</h4>
+
+        <div class="methodOptions">
+        <input type="radio" id="cardMethod">
+        <label for="cardMethod"><h4>CREDIT/DEBIT CARD</h4></label>
+      </div>
+
         <label for="cardNumber">Card number</label>
         <input type="number" name="cardNumber" id="cardNumber">
 
@@ -171,11 +182,23 @@
         <label for="CVV">CVV</label>
         <input type="password" name="CVV" id="CVV">
     </div>
+
+    <div class="methodOptions">
+      <input type="radio" id="cardMethod">
+      <label for="cardMethod"><h4>PAYPAL</h4></label>
+    </div>
+
+    <div class="methodOptions">
+      <input type="radio" id="cardMethod">
+      <label for="cardMethod"><h4>MOBILE PAY</h4></label>
+    </div>
+
     </div>
 
     <input class="placeOrder" type="submit" value="PLACE ORDER">
 
     </form>
+</section>
 </section>
 
 
