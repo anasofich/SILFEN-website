@@ -415,6 +415,12 @@ form.paymentForm {
   box-shadow: none;
 }
 
+footer {
+  height: 20rem;
+  width: 80vw;
+  background-color: violet;
+}
+
 @media only screen and (min-width: 440px) {
   #orderFlow {
     margin-left: 2vw;
@@ -434,16 +440,15 @@ form.paymentForm {
   }
 
   .paymentForm {
-    width: 400px;
-    margin-right: 52vw;
+    width: 350px;
     background-color: white;
   }
 
   #shoppingbagDetails {
-    margin-right: 2vw;
     height: fit-content;
-    width: fit-content;
-    position: fixed;
+    width: 380px;
+    top: 0;
+    position: sticky;
     background-color: white;
   }
 
@@ -471,25 +476,26 @@ form.paymentForm {
 @media only screen and (min-width: 860px) {
   .paymentForm {
     width: 400px;
-    margin-right: 52vw;
   }
 
   #shoppingbagDetails {
     margin-right: 4vw;
+    width: 500px;
   }
 }
 
 @media only screen and (min-width: 960px) {
-  #paymentForm {
-    margin-right: 5vw;
-  }
-
   #shoppingbagDetails {
-    margin-right: 9vw;
+    margin-right: 8vw;
+    margin-left: 5vw;
   }
 }
 
 @media only screen and (min-width: 1024px) {
+  #shoppingbagDetails {
+    margin-right: 4.5vw;
+  }
+
   .orderDetailsConf {
     margin-left: 6rem;
   }
@@ -498,11 +504,10 @@ form.paymentForm {
 @media only screen and (min-width: 1200px) {
   .paymentForm {
     width: 500px;
-    margin-right: 45vw;
   }
 
   #shoppingbagDetails {
-    margin-right: 10vw;
+    margin-right: 8vw;
   }
 
   .orderDetailsConf {
@@ -511,10 +516,6 @@ form.paymentForm {
 }
 
 @media only screen and (min-width: 1300px) {
-  #paymentForm {
-    margin-right: 8vw;
-  }
-
   #shoppingbagDetails {
     margin-right: 12vw;
   }
@@ -532,11 +533,11 @@ form.paymentForm {
 
   .paymentForm {
     width: 500px;
-    margin-right: 45vw;
+    margin-right: 0vw;
   }
 
   #shoppingbagDetails {
-    margin-right: 13vw;
+    margin-right: 15vw;
     height: fit-content;
   }
 
