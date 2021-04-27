@@ -36,6 +36,14 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.nameBag,
+.priceBag {
+  margin: 0.5rem;
+  padding: 0;
 }
 
 #productDesc {
@@ -98,7 +106,7 @@ h1 {
   font-size: 0.8rem;
   border: solid 2px black;
   border-radius: 20px;
-  width: 120px;
+  width: 110px;
   height: 35px;
   align-self: center;
   cursor: pointer;
@@ -111,6 +119,7 @@ h1 {
 label {
   align-self: center;
   font-family: var(--font-1);
+  margin-right: 0.5rem;
 }
 
 option,
@@ -131,7 +140,7 @@ select {
   font-family: var(--font-1);
   font-size: 1rem;
   font-weight: 200;
-  margin: 0;
+  margin: 0.5rem;
   padding: 0;
 }
 
