@@ -236,3 +236,87 @@ li {
   text-align: center;
   text-shadow: 2px 4px 0px var(--color-1);
 }
+
+.productView {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.hide {
+  display: block;
+}
+@media only screen and (min-width: 900px) {
+  .productView {
+    display: flex;
+    flex-direction: row;
+  }
+  #productDesc {
+    position: sticky;
+    top: 0;
+    width: 50%;
+    height: 20rem;
+  }
+
+  .product-pic img {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+  }
+  .product-pic {
+    flex-direction: column;
+  }
+  .similar {
+    margin-top: 6rem;
+  }
+
+  .bagOne {
+    width: 25em;
+  }
+
+  .lineTwo {
+    flex-direction: row;
+    /* justify-content: flex-start;
+    align-self: flex-start; */
+  }
+
+  .priceBag {
+    align-self: left;
+    margin: 0.6rem;
+    padding: 0;
+  }
+
+  select {
+    margin-left: 0;
+    margin: 0;
+  }
+  .addCart {
+    align-self: left;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .addCart2 {
+    align-self: left;
+    background-color: white;
+    font-family: var(--font-1);
+    font-size: 0.8rem;
+    border: solid 2px black;
+    border-radius: 20px;
+    width: 110px;
+    height: 50px;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 1rem 0;
+  }
+}

@@ -310,7 +310,7 @@ a {
 
   .items,
   .itemsTwo {
-    margin: 2rem;
+    margin: 0 4rem;
   }
 
   .bagOne {
@@ -326,5 +326,23 @@ a {
 
   .shoppingBag {
     margin-top: 0;
+  }
+
+  .bagproductImg {
+    width: 220px;
+    height: 220px;
+  }
+
+  .lineL {
+    width: 400px;
+  }
+  .bagName {
+    font-size: 1.3rem;
+  }
+
+  p,
+  .bagColor,
+  .bagQuantity {
+    font-size: 0.9rem;
   }
 }
