@@ -74,7 +74,7 @@ a.selected_type {
     border: solid 3px purple;
 }
 
-.filtering {
+.filtering_and_sorting {
     height: 500px;
     max-width: 300px;
     border: blue 2px solid;
@@ -82,6 +82,11 @@ a.selected_type {
     grid-row: 3/4;
     /* margin-left: auto;
     margin-right: auto; */
+}
+
+div.filtering_and_sorting > * {
+    /* display: flex;
+    flex-direction: row; */
 }
 
 #filter-type_of_bag {
