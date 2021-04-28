@@ -15,6 +15,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /*TOGGLERMENU*/
@@ -219,6 +220,73 @@ input:checked + .slider:before {
 
     transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
+}
+
+/*SILFEN/PLAY SPLIT HEADER*/
+#silfenSplit img {
+  width: 100%;
+  display: block;
+}
+#silfenSplit {
+  padding: 0;
+  margin: 0;
+}
+
+#playSplit img {
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+
+/*NEW ARRIVALS*/
+#newArrivals {
+  background-color: var(--color-1);
+  width: 100%;
+}
+
+#newArrivals img {
+  width: 100%;
+}
+
+#sustainability img {
+  width: 85%;
+  margin-top: 20%;
+  margin-left: 7.5%;
+  margin-bottom: 3%;
+}
+
+#sustainability p {
+  margin-left: 7.5%;
+  width: 85%;
+  font-family: var(--font-1);
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-bottom: 7%;
+}
+
+.readMore {
+  background-color: var(--color-2);
+  border-radius: 2em;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s;
+  outline: none;
+  border: none;
+  margin-left: 32%;
+  margin-right: 32%;
+  margin-bottom: 20%;
+}
+
+.readMore:hover {
+  background-color: var(--color-1);
+}
+
+#bestsellers {
+  background-color: #7bafd43a;
+}
+
+#bestsellers img {
+  width: 60%;
 }
 
 /*footer*/
