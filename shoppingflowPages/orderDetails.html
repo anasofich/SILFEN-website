@@ -102,7 +102,8 @@
 
 
         <label for="country">Country/region</label>
-        <select name="country" id="country">
+        <select name="country" id="country" required>
+          <option>Show all</option>
             <option>Denmark</option>
             <option>Germany</option>
             <option>Sweden</option>
@@ -111,7 +112,7 @@
         </select>
 
         <label for="postCode">Postcode</label>
-        <input type="number" name="postCode" id="postCode" required>
+        <input type="text" name="postCode" id="postCode" required>
 
         <label for="phoneNumber">Phone number</label>
         <input type="tel" name="phoneNumber" id="phoneNumber" required>
@@ -134,9 +135,9 @@
         <h2>PAYMENT</h2>
         <h3>BILLING ADDRESS</h3>
         <input type="radio" id="same" name="same">
-        <label for="same">Same as shipping address</span></label><br>
+        <label for="same">Same as shipping address</label><br>
         <input type="radio" id="different" name="different">
-        <label for="different">Use a different billing address</span></label><br>
+        <label for="different">Use a different billing address</label><br>
         
         <div class="paymentMethod">
         <h3>PAYMENT METHOD</h3>
@@ -147,7 +148,7 @@
       </div>
 
         <label for="cardNumber">Card number</label>
-        <input type="number" name="cardNumber" id="cardNumber">
+        <input type="text" name="cardNumber" id="cardNumber">
 
         <label>Expiry date <br>
             <select name="month" id="month">

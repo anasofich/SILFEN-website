@@ -439,7 +439,7 @@ form.paymentForm {
   }
 
   #shoppingbagDetails {
-    height: fit-content;
+    height: 500px;
     width: 380px;
     top: 0;
     position: sticky;
