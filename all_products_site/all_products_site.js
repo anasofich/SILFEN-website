@@ -24,23 +24,10 @@ product_types.forEach((type) => {
     console.log(types);
 });
 
-// function addEventListeners() {
-//     document.querySelector("#filter-type_of_bag a").addEventListener("click", selectType);
-
-//     if(openingOfTheGame != true) {
-//        clickOnButtonSound.play();
-//        }
-
-//     document.querySelector("#instructions").classList.add("hidden");
-//     document.querySelector("#title_screen").classList.remove("hidden");
-//     if (event_listeners.includes("title_play_button_listener") == false) {
-//         document.querySelector("#start_game_button").addEventListener("click", startGame);
-//         event_listeners.push("title_play_button_listener");
-//     }
-//     if (event_listeners.includes("instructions_button_listener") == false) {
-//         document.querySelector("#instructions_button").addEventListener("click", instructions);
-//         event_listeners.push("instructions_button_listener");
-//     }
-// }
-
 function selectType() {}
+
+// TO DO
+// event listeners on FILTER and SORT buttons --> when any of them is selected then it has a class "selected-filter_or_sort"
+// when clicked div#filter_by or div#sort_by is showed
+// when it is div#filter_by it shows at the begining only div.filtering_category , elements of categories are hidden
+// when click on category then elements of category is being showned

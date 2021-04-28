@@ -74,10 +74,20 @@ a.selected_type {
     display: flex;
     flex-direction: row;
     width: 50%;
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.61);
     padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
+    opacity: 50%;
+}
+
+.buttons-filter_and_sort:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 100%;
+}
+
+.selected-filter_or_sort {
+    opacity: 100%;
 }
 
 .filtering_and_sorting {
@@ -96,7 +106,7 @@ a.selected_type {
 
 .filtering_and_sorting > div > div.buttons-filter_and_sort > p {
     font-weight: 700;
-    padding-left: 10px;
+    padding-left: 15px;
     font-size: 1.1em;
 }
 
@@ -161,12 +171,22 @@ a.selected_type {
     padding-top: 95px;
 }
 
-li.filter-categories_items {
+li.filter-categories_items,
+li.sort-categories_items {
     list-style-type: none;
     white-space: nowrap;
     display: flex;
     height: 50px;
     align-items: center;
+}
+
+li.sort-categories_items {
+    margin-left: 20px;
+}
+
+li.filter-categories_items:hover,
+li.sort-categories_items:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .filter-circle_color {
