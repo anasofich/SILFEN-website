@@ -30,4 +30,8 @@ function selectType() {}
 // event listeners on FILTER and SORT buttons --> when any of them is selected then it has a class "selected-filter_or_sort"
 // when clicked div#filter_by or div#sort_by is showed
 // when it is div#filter_by it shows at the begining only div.filtering_category , elements of categories are hidden
-// when click on category then elements of category is being showned
+// when click on category then elements of category is being showned and icon-plus is changing to icon-minus
+// when click on element then img icon-unselected is changing to icon-selected
+// what you click is being saved in local storage
+
+// when mobile make FILTER and SORT elements hidden when loading the page
