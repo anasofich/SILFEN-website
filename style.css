@@ -19,15 +19,17 @@ body {
 }
 
 /*TOGGLERMENU*/
-#menuLeft {
+#toogleMenu {
   background-color: #fff;
+  margin:0;
 }
 
 #menuLeft img {
   width: 22%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 4%;
+  padding-right: 18%;
   margin-top: 3%;
+  margin-bottom:5%;
 }
 
 #menuLeft li {
@@ -46,6 +48,9 @@ body {
   width: 60px;
   height: 34px;
   margin-bottom: 3%;
+  position: absolute;
+  top:1.5%;
+  left:30%;
 }
 
 /* Hide default HTML checkbox */
