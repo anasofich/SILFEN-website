@@ -149,6 +149,9 @@ select {
   margin: 0;
 }
 
+.dropdown {
+  margin-left: 0.5rem;
+}
 .dropdown a:hover {
   color: #f2d5e8;
 }
@@ -271,7 +274,7 @@ li {
     flex-direction: column;
   }
   .similar {
-    margin-top: 6rem;
+    margin-top: 10rem;
   }
 
   .bagOne {
@@ -317,6 +320,18 @@ li {
     height: 50px;
     cursor: pointer;
     padding: 0.5rem;
-    margin: 1rem 0;
+    margin: 1rem 0.2rem;
+  }
+  .addCart2:hover {
+    background-color: black;
+    color: white;
+  }
+  .dropdown > .dropdownList:hover .list2 {
+    /* transform: scaleY(1); */
+    height: 140px;
+  }
+
+  p {
+    display: none;
   }
 }
