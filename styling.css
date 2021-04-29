@@ -260,15 +260,17 @@ li {
   #productDesc {
     position: sticky;
     top: 0;
-    width: 50%;
+    width: 80%;
     height: 20rem;
+    margin: 3rem;
   }
 
   .product-pic img {
-    max-width: 50%;
+    max-width: 70%;
     display: block;
-    margin: 0 auto;
+    margin: 3rem auto;
     height: auto;
+    padding: 0;
   }
   .product-pic {
     flex-direction: column;
@@ -333,5 +335,9 @@ li {
 
   p {
     display: none;
+  }
+
+  .bagDesc {
+    display: block;
   }
 }
