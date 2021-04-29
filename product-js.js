@@ -30,6 +30,10 @@ function handleBags(bags) {
   document.querySelector("h1.nameBag").textContent = bags.name;
   document.querySelector("h1.priceBag").textContent = bags.price;
   document.querySelector(".list li").textContent = bags.material;
-
+  document.querySelector(".product-pic img").src = bags.photo;
+  document.querySelector(".product-pic img:nth-child(2)").src = bags.photoOne;
+  document.querySelector(".product-pic img:nth-child(3)").src = bags.photoTwo;
+  document.querySelector(".product-pic img:nth-child(4)").src = bags.photoThree;
+  document.querySelector(".list li:nth-child(2)").textContent = bags.dimensions;
   document.querySelector(".bagDesc").textContent = bags.description;
 }
