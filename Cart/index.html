@@ -14,11 +14,32 @@
           <h2>NAME</h2>
           <img src="../photos/bibbi-nylon-blue.jpg" />
           <p>This is a bag</p>
-          <button>Add to cart</button>
+
+          <button data-id="id">Add to cart</button>
         </article></template
       >
       <section class="products"></section>
-      <aside class="cart"></aside>
+      <template id="cartTemplate">
+        <div class="cart-items">
+          <label for="ID">name</label>
+          <input type="number" id="ID" min="0" max="5" />
+          <p class="price-one">DKK <span></span></p>
+          <p class="price-all">DKK <span></span></p></div
+      ></template>
+      <aside class="cart">
+        <form>
+          <div class="cart-content">
+            <h2>the cart is empty</h2>
+            <div class="cart-items">
+              <label for="ID">name</label>
+              <input type="number" id="ID" min="0" max="5" />
+              <p class="price-one">DKK <span></span></p>
+              <p class="price-all">DKK <span></span></p>
+            </div>
+            <button type="submit">PROCEED TO CHECKOUT</button>
+          </div>
+        </form>
+      </aside>
     </main>
   </body>
   <script src="cart-js.js"></script>
