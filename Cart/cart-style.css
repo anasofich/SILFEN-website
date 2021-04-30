@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 50%;
+}
+
+body {
+  margin: 0;
+}
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.products {
+  background: pink;
+}
+.cart {
+  background: lightblue;
+}
