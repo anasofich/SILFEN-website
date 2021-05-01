@@ -51,19 +51,6 @@ img.product-image {
     height: auto;
     filter: contrast(94%);
     z-index: 1;
-    /* position: relative; */
-}
-
-.product-image2 {
-    background-image: url("../photos/bibbi-nylon-green.jpg");
-    display: block;
-    /* max-width: 250px;
-    height: auto; */
-    height: 100px;
-    width: 100;
-    filter: contrast(94%);
-    z-index: 1;
-    position: relative;
 }
 
 div.wishlist-on-product {
@@ -73,9 +60,10 @@ div.wishlist-on-product {
     width: 31px;
     height: 27px;
     z-index: 2;
-    position: absolute;
-    top: 0;
-    left: 0;
+    top: -235px;
+    left: 95px;
+    margin-bottom: -20px;
+    position: relative;
 }
 
 /* div.wishlist-on-product-container {
