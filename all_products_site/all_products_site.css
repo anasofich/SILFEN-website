@@ -66,22 +66,9 @@ div.wishlist-on-product {
     position: relative;
 }
 
-/* div.wishlist-on-product-container {
-    background-color: none;
-    display: block;
-    width: 31px;
-    height: 27px;
-    z-index: 2;
+div.wishlist-on-product:hover {
+    background-image: url("../images/icon-heart-wishlist-filled_blue.svg");
 }
-
-div.wishlist-on-product-sprite {
-    background-image: url("../images/icon-heart-wishlist.svg");
-    background-color: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-} */
 
 #content_grid {
     display: grid;
@@ -96,7 +83,7 @@ div.wishlist-on-product-sprite {
 .buttons-filter_and_sort {
     display: flex;
     flex-direction: row;
-    width: 50%;
+    /* width: 50%; */
     border: 2px solid rgba(0, 0, 0, 0.61);
     padding-top: 10px;
     padding-left: 10px;
@@ -124,25 +111,30 @@ div.wishlist-on-product-sprite {
     font-family: var(--font-1);
 }
 
-.filtering_and_sorting > div > div.buttons-filter_and_sort > p {
+.filtering_and_sorting > div > a > div.buttons-filter_and_sort > p {
     font-weight: 700;
     padding-left: 15px;
     font-size: 1.1em;
 }
 
-.filtering_and_sorting > div#filter_by > div.filtering_category > p {
+.filtering_and_sorting > div#filter_by > a > div.filtering_category > p {
     font-weight: 700;
 }
 
-.filtering_and_sorting > div#filter_by > ul > li > p {
+.filtering_and_sorting > div#filter_by > ul > a > li > p {
     padding-left: 15px;
 }
 
-.filtering_and_sorting > div#filter_by > ul > li > img {
+.filtering_and_sorting > div#filter_by > ul > a > li > img {
     padding-left: 20px;
 }
 
-.filtering_and_sorting > div#filter_by > ul > li > span.filter-circle_color {
+.filtering_and_sorting
+    > div#filter_by
+    > ul
+    > a
+    > li
+    > span.filter-circle_color {
     margin-left: 20px;
 }
 
@@ -188,8 +180,8 @@ div.wishlist-on-product-sprite {
     padding-top: 95px;
 }
 
-li.filter-categories_items,
-li.sort-categories_items {
+.filter-categories_items,
+.sort-categories_items {
     list-style-type: none;
     white-space: nowrap;
     display: flex;
@@ -197,12 +189,12 @@ li.sort-categories_items {
     align-items: center;
 }
 
-li.sort-categories_items {
+.sort-categories_items {
     margin-left: 20px;
 }
 
-li.filter-categories_items:hover,
-li.sort-categories_items:hover {
+.filter-categories_items:hover,
+.sort-categories_items:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
