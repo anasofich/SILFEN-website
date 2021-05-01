@@ -50,7 +50,50 @@ img.product-image {
     max-width: 250px;
     height: auto;
     filter: contrast(94%);
+    z-index: 1;
+    /* position: relative; */
 }
+
+.product-image2 {
+    background-image: url("../photos/bibbi-nylon-green.jpg");
+    display: block;
+    /* max-width: 250px;
+    height: auto; */
+    height: 100px;
+    width: 100;
+    filter: contrast(94%);
+    z-index: 1;
+    position: relative;
+}
+
+div.wishlist-on-product {
+    background-image: url("../images/icon-heart-wishlist.svg");
+    background-color: none;
+    display: block;
+    width: 31px;
+    height: 27px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* div.wishlist-on-product-container {
+    background-color: none;
+    display: block;
+    width: 31px;
+    height: 27px;
+    z-index: 2;
+}
+
+div.wishlist-on-product-sprite {
+    background-image: url("../images/icon-heart-wishlist.svg");
+    background-color: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+} */
 
 #content_grid {
     display: grid;
@@ -181,6 +224,61 @@ li.sort-categories_items:hover {
     height: 18px;
 }
 
+.product-circle_color {
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    margin-top: 4%;
+}
+
+article.single-product {
+    /* padding-top: 10%; */
+    padding-bottom: 10%;
+}
+
+article.single-product:hover {
+    box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 15%);
+}
+
+div.filter-bags-sprite:hover {
+    box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 15%);
+}
+div.filter-bags-sprite:hover {
+    font-weight: 700;
+}
+
+h3.product-name {
+    font-family: var(--font-1);
+    font-weight: 400;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    padding-top: 3%;
+    padding-bottom: 1.5%;
+}
+
+div.prices_when_product_on_sale {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+h4.product-sale_price {
+    font-family: var(--font-1);
+    font-weight: 800;
+    font-size: 1.1em;
+    padding-right: 5%;
+}
+
+h4.product-price {
+    font-family: var(--font-1);
+    font-weight: 600;
+    font-size: 1.1em;
+    padding-left: 5%;
+    text-decoration: line-through;
+    opacity: 60%;
+}
+
 @media (max-width: 1400px) {
     #content_grid {
         display: grid;
@@ -252,7 +350,7 @@ li.sort-categories_items:hover {
         padding-top: 70px;
     }
     .text-bag_type {
-        font: var(--font-1);
+        font-family: var(--font-1);
         font-size: 14px;
     }
     img.product-image {
