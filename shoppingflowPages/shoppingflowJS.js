@@ -1,5 +1,6 @@
 const form = document.querySelector(".paymentForm");
-//console.log((form.elements.firstName.value = "hello world"));
+const urlParams = new URLSearchParams(window.location.search);
+const orderId = urlParams.get("article");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -44,6 +45,8 @@ form.addEventListener("submit", (e) => {
       form.elements.postCode.value = "";
       form.elements.phoneNumber.value = "";
       form.elements.email.value = "";
+      document.querySelector("#orderDetails").classList.add("hidden");
+      document.querySelector("#orderConfirmation").classList.remove("hidden");
     })
     .catch((err) => {
       console.error(err);

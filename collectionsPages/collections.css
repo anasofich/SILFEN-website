@@ -1,0 +1,125 @@
+@font-face {
+  src: url(../fonts/Manrope-VariableFont_wght.ttf);
+  font-family: "Manrope", sans-serif;
+}
+
+:root {
+  --color-1: #edff00;
+  --color-2: #7bafd4;
+  --color-3: #9ad9b3;
+
+  --font-1: "Manrope", sans-serif;
+  --main-text-color: #111;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-1);
+}
+
+h1 {
+  font-family: "Manrope", sans-serif;
+}
+
+/*COLLECTIONS MAIN*/
+.cHeader {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.blueshadow {
+  text-shadow: -5px 3px 0px #7bafd4;
+}
+
+.yellowshadow {
+  text-shadow: -5px 3px 0px #edff00;
+}
+
+.greenshadow {
+  text-shadow: -5px 3px 0px #9ad9b3;
+}
+
+.cGrid {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  margin-top: 4rem;
+}
+
+.cPhotos {
+  width: 300px;
+  height: 500px;
+}
+
+.cPhotos img {
+  max-width: 100%;
+}
+
+.cPhotos img.bluehover {
+  box-shadow: -12px 14px 0px 0px #7bafd4;
+}
+
+.cPhotos img.yellowhover {
+  box-shadow: -12px 14px 0px 0px #edff00;
+}
+
+.cPhotos img.greenhover {
+  box-shadow: -12px 14px 0px 0px #9ad9b3;
+}
+
+.cNames {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin-top: 3rem;
+  margin-left: 15rem;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.cNames a.bluehover {
+  text-decoration: none;
+  color: white;
+  text-shadow: -1.2px -1.2px 0 #7bafd4, 1.2px -1.2px 0 #7bafd4,
+    -1.2px 1.2px 0 #7bafd4, 1.2px 1.2px 0 #7bafd4;
+}
+
+.cNames a.yellowhover {
+  text-decoration: none;
+  color: white;
+  text-shadow: -1.2px -1.2px 0 #edff00, 1.2px -1.2px 0 #edff00,
+    -1.2px 1.2px 0 #edff00, 1.2px 1.2px 0 #edff00;
+}
+
+.cNames a.greenhover {
+  text-decoration: none;
+  color: white;
+  text-shadow: -1.2px -1.2px 0 #9ad9b3, 1.2px -1.2px 0 #9ad9b3,
+    -1.2px 1.2px 0 #9ad9b3, 1.2px 1.2px 0 #9ad9b3;
+}
+
+.cNames a.bluehover:hover {
+  color: var(--color-2);
+  text-shadow: none;
+}
+
+.cNames a.yellowhover:hover {
+  color: var(--color-1);
+  text-shadow: none;
+}
+
+.cNames a.greenhover:hover {
+  color: var(--color-3);
+  text-shadow: none;
+}
+
+.hidden {
+  display: none;
+}

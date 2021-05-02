@@ -312,10 +312,11 @@ form.paymentForm {
   font-style: var(--font-1);
   margin-top: 1rem;
   box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease-in-out;
 }
 
 .placeOrder:hover {
-  opacity: 0.7;
+  transform: scale(1.1);
 }
 
 .placeOrder:active {
@@ -400,19 +401,20 @@ form.paymentForm {
   font-style: var(--font-1);
   margin-top: 1rem;
   box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.12);
-}
-
-.backtoShop button:active {
-  box-shadow: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .backtoShop button:hover {
-  opacity: 0.7;
+  transform: scale(1.1);
 }
 
 .backtoShop button:active {
   opacity: 0.7;
   box-shadow: none;
+}
+
+.hidden {
+  display: none;
 }
 
 @media only screen and (min-width: 440px) {
