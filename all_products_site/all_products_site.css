@@ -57,7 +57,7 @@ div.wishlist-on-product {
     background-image: url("../images/icon-heart-wishlist.svg");
     background-color: none;
     display: block;
-    width: 31px;
+    width: 30.6px;
     height: 27px;
     z-index: 2;
     top: -235px;
@@ -337,5 +337,16 @@ h4.product-price {
         display: block;
         max-width: 80%;
         height: auto;
+    }
+    div.wishlist-on-product {
+        top: -28vw;
+        left: 11vw;
+    }
+}
+
+@media (max-width: 665px) {
+    div.wishlist-on-product {
+        top: -60vw;
+        left: 26vw;
     }
 }
