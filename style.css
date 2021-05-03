@@ -21,7 +21,7 @@ body {
 /*TOGGLERMENU*/
 #toogleMenu {
   background-color: #fff;
-  margin:0;
+  margin: 0;
 }
 
 #menuLeft img {
@@ -29,7 +29,7 @@ body {
   padding-left: 4%;
   padding-right: 18%;
   margin-top: 3%;
-  margin-bottom:5%;
+  margin-bottom: 5%;
 }
 
 #menuLeft li {
@@ -49,8 +49,8 @@ body {
   height: 34px;
   margin-bottom: 3%;
   position: absolute;
-  top:1.5%;
-  left:30%;
+  top: 1.5%;
+  left: 30%;
 }
 
 /* Hide default HTML checkbox */
@@ -160,7 +160,8 @@ input:checked + .slider:before {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
@@ -241,52 +242,51 @@ input:checked + .slider:before {
   display: block;
 }
 
-#silfenSplit .info{
-    width:85%;
-    position: absolute;
-    top: 28%;
-    left: 7.5%;
+#silfenSplit .info {
+  width: 85%;
+  position: absolute;
+  top: 28%;
+  left: 7.5%;
 }
 
-#playSplit .info{
-    width:85%;
-    position: absolute;
-    top: 70%;
-    left: 7.5%;
+#playSplit .info {
+  width: 85%;
+  position: absolute;
+  top: 70%;
+  left: 7.5%;
 }
 
 .shopS {
-    background-color: rgb(0, 0, 0);
-    border-radius: 2em;
-    border-color: #7bafd400;
-    padding: 10px 20px;
-    color: white;
-    transition: all 0.2s;
-    position: absolute;
-    top: 39%;
-    left:33%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 2em;
+  border-color: #7bafd400;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s;
+  position: absolute;
+  top: 39%;
+  left: 33%;
+}
 
-  }
-  
-  .shopS:hover {
-    background-color: var(--color-1);
-  }
+.shopS:hover {
+  background-color: var(--color-1);
+}
 
-  .shopP {
-    background-color: rgb(0, 0, 0);
-    border-radius: 2em;
-    border-color: #7bafd400;
-    padding: 10px 20px;
-    color: white;
-    transition: all 0.2s;
-    position: absolute;
-    top: 81%;
-    left:35%;
-  }
-  
-  .shopP:hover {
-    background-color: var(--color-1);
-  }
+.shopP {
+  background-color: rgb(0, 0, 0);
+  border-radius: 2em;
+  border-color: #7bafd400;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s;
+  position: absolute;
+  top: 81%;
+  left: 35%;
+}
+
+.shopP:hover {
+  background-color: var(--color-1);
+}
 
 /*NEW ARRIVALS*/
 #newArrivals {
@@ -297,40 +297,39 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-#newArrivals h1{
-    font-family: var(--font-1);
-    font-size: 2rem;
-    font-weight: 200;
-    margin:0;
-    text-shadow: 1.5px 1.5px #9ad9b3;
+#newArrivals h1 {
+  font-family: var(--font-1);
+  font-size: 2rem;
+  font-weight: 200;
+  margin: 0;
+  text-shadow: 1.5px 1.5px #9ad9b3;
 }
 
-#newArrivals p{
-    font-family: var(--font-1);
-    font-size: 1.3rem;
-    font-weight: 200;
-    margin-bottom:0;
+#newArrivals p {
+  font-family: var(--font-1);
+  font-size: 1.3rem;
+  font-weight: 200;
+  margin-bottom: 0;
 }
 
 #newArrivals img {
   width: 100%;
 }
 
-.shopNA{
-        background-color: var(--color-2);
-        border-radius: 2em;
-        padding: 10px 20px;
-        color: white;
-        transition: all 0.2s;
-        outline: none;
-        border: none;
-        margin-bottom:10%;
+.shopNA {
+  background-color: var(--color-2);
+  border-radius: 2em;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s;
+  outline: none;
+  border: none;
+  margin-bottom: 10%;
 }
-      
-      .shopNA:hover {
-        background-color: var(--color-1);
-      }
 
+.shopNA:hover {
+  background-color: var(--color-1);
+}
 
 #sustainability img {
   width: 85%;
@@ -377,85 +376,85 @@ input:checked + .slider:before {
   box-shadow: 0px 10px 29px 3px #9ad9b338;
 }
 
-#bestsellers h1{
-font-family: var(--font-1);
-font-weight: 200;
-text-shadow: 1px 1px #9ad9b3;
-text-align: center;
+#bestsellers h1 {
+  font-family: var(--font-1);
+  font-weight: 200;
+  text-shadow: 1px 1px #9ad9b3;
+  text-align: center;
 }
 
-#bestsellers p{
-font-family: var(--font-1);
-font-weight: 600;
-text-align: center;
+#bestsellers p {
+  font-family: var(--font-1);
+  font-weight: 600;
+  text-align: center;
 }
 
 .seeMore {
-background-color: var(--color-2);
-border-radius: 2em;
-padding: 10px 20px;
-color: white;
-transition: all 0.2s;
-outline: none;
-border: none;
-margin-top: 10%;
-margin-bottom: 10%;
-font-size: 0.9rem;
+  background-color: var(--color-2);
+  border-radius: 2em;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s;
+  outline: none;
+  border: none;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  font-size: 0.9rem;
 }
 
 .seeMore:hover {
-    background-color: var(--color-1);
-  }
-
-#somePost{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #9ad9b32a;
+  background-color: var(--color-1);
 }
 
-#somePost img{
-    width: 90%;
+#somePost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9ad9b32a;
 }
 
-#somePost h1{
-    font-family: var(--font-1);
-    font-weight: 300;
-    color:#9ad9b3d5;
-    font-size: 1.2rem;
-}
-#somePost h2{
-    font-family: var(--font-1);
-    font-weight: 300;
-    color:#9ad9b3;
-    font-size: 1.4rem;
-    text-align: center;
-    margin-top:0;
+#somePost img {
+  width: 90%;
 }
 
-#somePost p{
-    font-family: var(--font-1);
-    font-weight: 600;
-    color:#9ad9b3;
-    font-size: 1.4rem;
-    text-align: center;
+#somePost h1 {
+  font-family: var(--font-1);
+  font-weight: 300;
+  color: #9ad9b3d5;
+  font-size: 1.2rem;
+}
+#somePost h2 {
+  font-family: var(--font-1);
+  font-weight: 300;
+  color: #9ad9b3;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 0;
 }
 
-.instaButton{
-background-color: var(--color-2);
-border-radius: 2em;
-padding: 10px 20px;
-color: white;
-transition: all 0.2s;
-outline: none;
-border: none;
-margin-bottom: 10%;
-font-size:0.9rem;
+#somePost p {
+  font-family: var(--font-1);
+  font-weight: 600;
+  color: #9ad9b3;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.instaButton {
+  background-color: var(--color-2);
+  border-radius: 2em;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s;
+  outline: none;
+  border: none;
+  margin-bottom: 10%;
+  font-size: 0.9rem;
 }
 
 .instaButton:hover {
-    background-color: var(--color-1);
-  }
+  background-color: var(--color-1);
+}
 
 /*footer*/
 footer {
