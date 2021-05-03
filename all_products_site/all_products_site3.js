@@ -20,15 +20,41 @@ function load_data() {
 function toggle_click(button) {
     // changes only the visual style nothing else
     let source = button.children[0].src
-    if (source.includes("unselected") == true) {
+    if (source.contains("unselected") == true) {
         button.children[0].src = "../images/icon-selected_filtering_element.svg"
     } else {
         button.children[0].src = "../images/icon-unselected_filtering_element.svg"
     }
 }
 
+function toggle_click_hearts(product) {
+    // changes only the visual style of hearts on click nothing else
+    
+    let heart_icon = product.children[0].children[1]
+    if (heart_icon.classList.contains("wishlist-on-product") == true) {
+        heart_icon.classList.remove("wishlist-on-product")
+        heart_icon.classList.add("wishlist-on-product-clicked")
+        console.log("it's true!")
+    }
+    else {
+        heart_icon.classList.remove("wishlist-on-product-clicked")
+        heart_icon.classList.add("wishlist-on-product")
+        console.log("false")
+    }
 
-// event listener functions (run on event)
+
+    // .wishlist-on-product
+    // .wishlist-on-product-clicked
+    // let source = button.children[0].src
+    // if (source.includes("unselected") == true) {
+    //     button.children[0].src = "../images/icon-selected_filtering_element.svg"
+    // } else {
+    //     button.children[0].src = "../images/icon-unselected_filtering_element.svg"
+    // }
+}
+
+
+// event listener functions
 
 function click_bag_type(clicked_type, all_bag_types) {
     // add class selection on div
@@ -41,6 +67,17 @@ function click_bag_type(clicked_type, all_bag_types) {
 
     load_data()
 }
+
+function setup_wishlist_listener(container_product_list) {
+    // let products = container_product_list.children
+    let products = [...container_product_list.children]
+    console.log(products)
+    products.forEach((product) => {
+        product.addEventListener(
+            "click", toggle_click_hearts.bind(null, product))
+    })
+}
+
 
 function click_sales_filter(sales_button) {
     toggle_click(sales_button)
@@ -161,12 +198,15 @@ function main() {
     const container_type_of_bags = document.getElementById("filter-type_of_bag")
     const container_filters = document.getElementById("filter_by")
     const container_sorting = document.getElementById("sort_by")
+    const container_product_list = document.getElementById("product_list")
     const filter_button = document.getElementById("select_filtering")
     const sort_button = document.getElementById("select_sorting")
+  
 
     setup_filter_sort_panel(container_filters, container_sorting, filter_button, sort_button)
     setup_bag_types_listener(container_type_of_bags)
     setup_filters_listener(container_filters)
+    setup_wishlist_listener(container_product_list)
 
     load_data()
 }

@@ -45,7 +45,7 @@ a.selected_type {
     text-align: -webkit-center;
 }
 
-img.product-image {
+.product-image {
     display: block;
     max-width: 250px;
     height: auto;
@@ -53,7 +53,7 @@ img.product-image {
     z-index: 1;
 }
 
-div.wishlist-on-product {
+.wishlist-on-product {
     background-image: url("../images/icon-heart-wishlist.svg");
     background-color: none;
     display: block;
@@ -66,8 +66,24 @@ div.wishlist-on-product {
     position: relative;
 }
 
-div.wishlist-on-product:hover {
-    background-image: url("../images/icon-heart-wishlist-filled_blue.svg");
+
+.wishlist-on-product-clicked {
+    background-image: url("../images/icon-heart-wishlist-filled_black.svg");
+    background-color: none;
+    display: block;
+    width: 30.6px;
+    height: 27px;
+    z-index: 2;
+    top: -235px;
+    left: 95px;
+    margin-bottom: -20px;
+    position: relative;
+}
+
+
+.wishlist-on-product:hover {
+    background-image: url("../images/icon-heart-wishlist-filled_black.svg");
+    opacity: 40%;
 }
 
 #content_grid {
