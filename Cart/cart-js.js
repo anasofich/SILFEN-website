@@ -55,3 +55,25 @@ const content = [
       "https://anasofich.github.io/SILFEN-website/photos/ulrikka-recycled-green.jpeg",
   },
 ];
+
+content.forEach((element) => {
+  console.log(content);
+  const tempItem = document.querySelector("#cartTemplate").content;
+  const copy = tempItem.cloneNode(true);
+
+  const labelEl = copy.querySelector("label");
+  labelEl.textContent = element.name;
+  labelEl.setAttribute("for", element.name);
+
+  const inputEl = copy.querySelector("input");
+  inputEl.id += element.id;
+  inputEl.name = element.name;
+
+  const priceEl = copy.querySelector(".price-all span");
+  priceEl.textContent = element.price;
+
+  inputEl.value = element.qty;
+
+  const cartcontent = document.querySelector(".cart-content");
+  cartcontent.appendChild(copy);
+});
