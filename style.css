@@ -388,10 +388,9 @@ text-align: center;
 font-family: var(--font-1);
 font-weight: 600;
 text-align: center;
-padding
 }
 
-.seeMore{
+.seeMore {
 background-color: var(--color-2);
 border-radius: 2em;
 padding: 10px 20px;
