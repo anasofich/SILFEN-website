@@ -1,132 +1,293 @@
-const searchParams = new URLSearchParams(window.location.search);
-const articleID = searchParams.get("name");
+//finding a value of "category" from URL
 
-// TO DO
-// event listeners on types of bags, when selected adding class to "a" - ".selected_type", and removing it from previously selected type of bag
+// const urlParams = new URLSearchParams(window.location.search);
+// const categorycategory);
+// document.querySelector("").textContent = category;
 
-let container_types_of_bags = document.getElementById("filter-type_of_bag");
-console.log(container_types_of_bags);
-// console.log(container_types_of_bags.childNodes);
-console.log(container_types_of_bags.children);
+// 1
+// url = 'https://kea2021-907c.restdb.io/shop?brand=tesla'
+// url = 'https://kea2021-907c.restdb.io/shop?color=red'
+// const urlParams = new URLSearchParams(window.location.search);
 
-let bag_types = [];
+// let params = urlParams.getQueryParameters()
+// params.brand
 
-container_types_of_bags.forEach((type) => {
-    let types = document.querySelector("#filter-type_of_bag").children;
-    console.log(types);
-});
+// 2
+// localStorage.setItem('shop_brand', 'tesla')
+
+// localStorage.getItem('shop_brand')
+// localStorage.removeItem('shop_brand')
 
 
-type.addEventListener("click", selected_type);
+
+// const url = "https://kea-alt-del.dk/t7/api/products?limit=100";
 
 
-function selected_type(type) {
-    type.
+
+//adding the source from where we fetch data
+
+// const url = "https://kea-alt-del.dk/t7/api/products?category=" + category; 
+const url = "https://kea2021-907c.restdb.io/rest/bags?"
+const header = {
+    "method": "GET",
+    "headers": {
+        "x-apikey": "602e264f5ad3610fb5bb6267",
+        "Content-Type": "application/json"
+    }
+}
+console.log(url)
+
+
+fetch(url, header)
+    .then((res) => res.json())
+    .then(response => {
+        console.log(response)
+        response.forEach(product => {
+            showProduct(product)
+        })
+    })
+    .catch(err => {
+        console.error(err);
+    });
+
+
+function showProduct(data){
+    //grab the template
+    const product_template = document.querySelector("template.product-template").content
+    console.log(product_template)
+
+    //clone it
+    const myCopy = product_template.cloneNode(true);
+    //change content
+
+    myCopy.querySelector("h3.product-name").textContent = data.name
+    myCopy.querySelector("img.product-image").alt = data.name
+
+    myCopy.querySelector("img.product-image").src = data.photo
+
+    //  myCopy.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+    //CIRCLE COLOUR???
+
+    //changing content when sale, sold out etc
+
+    if (url.sale == true) {
+        myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
+        myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
+    } else {
+        myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
+    }
+    // const aEl = myCopy.querySelector("a");
+    // aEl.href = "product.html?id=" + url_id;
+
+    //grab parent
+    const parent = document.querySelector("#product_list")
+    console.log(parent)
+    //append
+    parent.appendChild(myCopy)
+
 }
 
 
 
-// function setup_event_listeners_on_bag_types(bag_types) {
-//     bag_types.forEach((type) => {
-//         let types = document.querySelector("#filter-type_of_bag").children;
-//         console.log(types);
-//     });
-// }
 
-// setup_event_listeners_on_bag_types(container_types_of_bags);
 
-// document.querySelector("#button-exit").addEventListener("click", titleScreen);
-//
-//
-//
-//
-//Filipa kod
 
-let product_types = [];
+// global data
 
-function clear_selected_types(product_types) {
-    // removes css properties from all types
+let current_filters = {
+    bag_types: "VIEW ALL",
+    sales: false,
+    newarr: false,
+    collections: [],
+    materials: [],
 }
 
-function event_on_click_type(type) {
-    // call function clear_selected_types
-    // add css class
-}
+// load data function
 
-function setup_event_listeners(product_types) {
-    // for all types add event listener on click
+function load_data() {
+    console.log('loading_data...')
 }
 
 
-// import (biblioteki albo inne pliki.js)
+// helper function (other usage)
 
-// statatyczne zmienne (globalne)
+function toggle_click(button) {
+    // changes only the visual style nothing else
+    let source = button.children[0].src
+    if (source.includes("unselected") == true) {
+        button.children[0].src = "../images/icon-selected_filtering_element.svg"
+    } else {
+        button.children[0].src = "../images/icon-unselected_filtering_element.svg"
+    }
+}
 
-// definicje funkcji albo klasy
+function toggle_click_hearts(product) {
+    // changes only the visual style of hearts on click nothing else
+    
+    let heart_icon = product.children[0].children[1]
+    if (heart_icon.classList.contains("wishlist-on-product") == true) {
+        heart_icon.classList.remove("wishlist-on-product")
+        heart_icon.classList.add("wishlist-on-product-clicked")
+    }
+    else {
+        heart_icon.classList.remove("wishlist-on-product-clicked")
+        heart_icon.classList.add("wishlist-on-product")
+    }
+}
 
-// inne funkcje ktore cos rzeczywiscie robia
-// glowna funkcja ktora wywoluje inne funkcje
+// event listener functions
 
-// wykonanie
+function click_bag_type(clicked_type, all_bag_types) {
+    // add class selection on div
+    all_bag_types.forEach((type) => {
+        type.classList.remove("selected_type")
+    })
+    clicked_type.classList.add("selected_type")
+    // add selected bag type name to filtering
+    current_filters.bag_types = clicked_type.getElementsByClassName("text-bag_type")[0].textContent
+
+    load_data()
+}
+
+function setup_wishlist_listener(container_product_list) {
+    // let products = container_product_list.children
+    let products = [...container_product_list.children]
+    products.forEach((product) => {
+        product.addEventListener(
+            "click", toggle_click_hearts.bind(null, product))
+    })
+}
 
 
-setup_event_listeners(product_types);
+function click_sales_filter(sales_button) {
+    toggle_click(sales_button)
+    if (current_filters.sales) {
+        current_filters.sales = false
+    } else {
+        current_filters.sales = true
+    }
 
-product_types.forEach((type) => {
-    let types = document.querySelector("div#filter-type_of_bag a");
-    console.log(types);
-});
+    load_data()
+}
 
-function selectType() {}
+function click_newarr_filter(newarr_button) {
+    toggle_click(newarr_button)
+    if (current_filters.newarr) {
+        current_filters.newarr = false
+    } else {
+        current_filters.newarr = true
+    }
 
-// TO DO
-// event listeners on FILTER and SORT buttons --> when any of them is selected then it has a class "selected-filter_or_sort"
-// when clicked div#filter_by or div#sort_by is showed
-// when it is div#filter_by it shows at the begining only div.filtering_category , elements of categories are hidden
-// when click on category then elements of category is being showned and icon-plus is changing to icon-minus
-// when click on element then img icon-unselected is changing to icon-selected
-// what you click is being saved in local storage
+    load_data()
+}
 
-// when mobile make FILTER and SORT elements hidden when loading the page
-//
-//
-//
-//TO DO- 1. fetch it properly to restdb, 2. change properties inside template
-//Show each product
-//
+function click_collection_filter(collection_button) {
+    toggle_click(collection_button.children[0])
 
-// function getdata() {
-//     fetch("https://kea21s-3790.restdb.io/rest/posts", {
-//         method: "GET",
-//         headers: {
-//             "x-apikey": "606d5f8cf553500431007514",
-//         },
-//     })
-//         .then((res) => res.json())
-//         .then((response) => {
-//             console.log(response);
-//             showPosts(response);
-//         })
-//         .catch((err) => {
-//             console.error(err);
-//         });
-// }
-// getdata();
+    // save selected collection filter
+    let collection_name = collection_button.children[0].children[1].textContent
+    if (current_filters.collections.includes(collection_name)) {
+        // removes #collection_name from the list if it already exist
+        current_filters.collections = current_filters.collections.filter(i => i !== collection_name)
+    } else {
+        // adds #collection_name to the list if it does not already exist
+        current_filters.collections.push(collection_name)
+    }
 
-// function showPosts(posts) {
-//     const template = document.querySelector("template.product-template")
-//         .content;
+    load_data()
+}
 
-//     posts.forEach((post) => {
-//         console.log(post);
-//         const copy = template.cloneNode(true);
-//         template.querySelector("h3").textContent = post.title;
-//         template.querySelector("h4 span").textContent = post.username;
-//         template.querySelector(
-//             "a.readmore"
-//         ).href = `article.html?articleId=${post._id}`;
-//         document.querySelector("div#product_list").appendChild(copy);
-//     });
-// }
-//
-//
+function click_material_filter(material_button) {
+    toggle_click(material_button.children[0]) //to get from a, li element
+    let material_name = material_button.children[0].children[1].textContent //to get to p element which is [1]st child of a
+    if (current_filters.materials.includes(material_name)) { //"current_filters" is a global data
+        // removes #material_name from the list if it already exist
+        current_filters.materials = current_filters.materials.filter(i => i !== material_name)
+    } else {
+        // adds #material_name to the list if it does not already exist
+        current_filters.materials.push(material_name)
+    }
+
+    load_data()
+}
+
+// setup functions (run only once)
+
+function setup_bag_types_listener(container_type_of_bags) {
+    // hack! change HTMLCollection to list (forEach does not work on HTMLCollections...)
+    let bag_types = [...container_type_of_bags.children]
+    bag_types.forEach((type) => {
+        type.addEventListener(
+            "click", click_bag_type.bind(null, type, bag_types))
+    })
+}
+
+function setup_filters_listener(container_filters) {
+    // one option
+    let sales_container = container_filters.getElementsByClassName("filter-sale")[0] // [0] needed here to only select the first object with that class
+    let newarr_container = container_filters.getElementsByClassName("filter-new_arrivals")[0]
+    // multiple options
+    let collections_container = container_filters.getElementsByClassName("filter-collection_elements")[0]
+    let material_container = container_filters.getElementsByClassName("filter-material_elements")[0]
+
+    // add event listeners for one option
+    let sales_button = sales_container.children[0]
+    sales_button.addEventListener("click", click_sales_filter.bind(null, sales_button))
+
+    let newarr_button = newarr_container.children[0]
+    newarr_button.addEventListener("click", click_newarr_filter.bind(null, newarr_button))
+    
+    // add event listeners for multiple options
+    let collection_types = [...collections_container.children] //to create a list with children elements
+    collection_types.forEach((type) => {
+        type.addEventListener("click", click_collection_filter.bind(null, type))
+    })
+    let material_types = [...material_container.children]
+
+    // console.log(material_types)
+    material_types.forEach((type) => {
+        type.addEventListener("click", click_material_filter.bind(null, type))
+    })
+}
+
+function setup_filter_sort_panel(container_filters, container_sorting, filter_button, sort_button) {
+    function click_select_filtering(container_filters, container_sorting, filter_button, sort_button) {
+        filter_button.classList.add("selected-filter_or_sort")
+        container_filters.classList.remove("hidden")
+    
+        container_sorting.classList.add("hidden")
+        sort_button.classList.remove("selected-filter_or_sort")
+    }
+    
+    function click_select_sorting(container_filters, container_sorting, filter_button, sort_button) {
+        container_filters.classList.add("hidden")
+        filter_button.classList.remove("selected-filter_or_sort")
+    
+        container_sorting.classList.remove("hidden")
+        sort_button.classList.add("selected-filter_or_sort")
+    }
+
+    filter_button.addEventListener(
+        'click', click_select_filtering.bind(null, container_filters, container_sorting, filter_button, sort_button)) //bind, null tutaj zeby przekazalo do funkcji te zmienne oraz zeby funkcja w event listenerze nie wykonala sie od razu, tylko na click
+    sort_button.addEventListener(
+        'click', click_select_sorting.bind(null, container_filters, container_sorting, filter_button, sort_button))
+}
+
+function main() {
+    const container_type_of_bags = document.getElementById("filter-type_of_bag")
+    const container_filters = document.getElementById("filter_by")
+    const container_sorting = document.getElementById("sort_by")
+    const container_product_list = document.getElementById("product_list")
+    const filter_button = document.getElementById("select_filtering")
+    const sort_button = document.getElementById("select_sorting")
+  
+
+    setup_filter_sort_panel(container_filters, container_sorting, filter_button, sort_button)
+    setup_bag_types_listener(container_type_of_bags)
+    setup_filters_listener(container_filters)
+    setup_wishlist_listener(container_product_list)
+
+    load_data()
+}
+
+main()
