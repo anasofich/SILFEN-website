@@ -20,7 +20,7 @@ function load_data() {
 function toggle_click(button) {
     // changes only the visual style nothing else
     let source = button.children[0].src
-    if (source.contains("unselected") == true) {
+    if (source.includes("unselected") == true) {
         button.children[0].src = "../images/icon-selected_filtering_element.svg"
     } else {
         button.children[0].src = "../images/icon-unselected_filtering_element.svg"
@@ -41,18 +41,7 @@ function toggle_click_hearts(product) {
         heart_icon.classList.add("wishlist-on-product")
         console.log("false")
     }
-
-
-    // .wishlist-on-product
-    // .wishlist-on-product-clicked
-    // let source = button.children[0].src
-    // if (source.includes("unselected") == true) {
-    //     button.children[0].src = "../images/icon-selected_filtering_element.svg"
-    // } else {
-    //     button.children[0].src = "../images/icon-unselected_filtering_element.svg"
-    // }
 }
-
 
 // event listener functions
 
