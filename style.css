@@ -241,6 +241,53 @@ input:checked + .slider:before {
   display: block;
 }
 
+#silfenSplit .info{
+    width:85%;
+    position: absolute;
+    top: 28%;
+    left: 7.5%;
+}
+
+#playSplit .info{
+    width:85%;
+    position: absolute;
+    top: 70%;
+    left: 7.5%;
+}
+
+.shopS {
+    background-color: rgb(0, 0, 0);
+    border-radius: 2em;
+    border-color: #7bafd400;
+    padding: 10px 20px;
+    color: white;
+    transition: all 0.2s;
+    position: absolute;
+    top: 39%;
+    left:33%;
+
+  }
+  
+  .shopS:hover {
+    background-color: var(--color-1);
+  }
+
+  .shopP {
+    background-color: rgb(0, 0, 0);
+    border-radius: 2em;
+    border-color: #7bafd400;
+    padding: 10px 20px;
+    color: white;
+    transition: all 0.2s;
+    position: absolute;
+    top: 81%;
+    left:35%;
+  }
+  
+  .shopP:hover {
+    background-color: var(--color-1);
+  }
+
 /*NEW ARRIVALS*/
 #newArrivals {
   background-color: var(--color-1);
@@ -354,7 +401,7 @@ outline: none;
 border: none;
 margin-top: 10%;
 margin-bottom: 10%;
-font-size:0.9rem;
+font-size: 0.9rem;
 }
 
 .seeMore:hover {
