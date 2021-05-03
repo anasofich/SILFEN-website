@@ -1,0 +1,343 @@
+@font-face {
+  src: url(fonts/Manrope-VariableFont_wght.ttf);
+  font-family: "Manrope", sans-serif;
+}
+
+:root {
+  --color-1: #edff00;
+  --color-2: #7bafd4;
+  --color-3: #9ad9b3;
+
+  --font-1: "Manrope", sans-serif;
+  --main-text-color: #111;
+}
+
+h1 {
+  font-family: "Manrope", sans-serif;
+}
+
+/*PRODUCT VIEW PHOTO*/
+
+.product-pic {
+  display: flex;
+  overflow-x: auto;
+  align-items: flex-start;
+}
+
+.product-pic img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+}
+
+.lineOne,
+.lineTwo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.nameBag,
+.priceBag {
+  margin: 0.5rem;
+  padding: 0;
+}
+
+#productDesc {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameBag {
+  font-family: var(--font-1);
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+.priceBag {
+  font-family: var(--font-1);
+  font-weight: 100;
+  font-size: 1.3rem;
+  align-self: center;
+}
+
+.productDet {
+  font-family: var(--font-1);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.colours {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.colour {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.3rem;
+}
+
+.colour:hover {
+  box-shadow: 3px 2px 5px 1px black;
+}
+
+.green {
+  background-color: #3c7060;
+}
+
+.blue {
+  background-color: var(--color-2);
+}
+
+.black {
+  background-color: black;
+}
+
+.beige {
+  background-color: #cbaa86;
+}
+.addCart {
+  background-color: white;
+  font-family: var(--font-1);
+  font-size: 0.8rem;
+  border: solid 2px black;
+  border-radius: 20px;
+  width: 110px;
+  height: 35px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.addCart:hover {
+  background-color: black;
+  color: white;
+}
+label {
+  align-self: center;
+  font-family: var(--font-1);
+  margin-right: 0.5rem;
+}
+
+option,
+select {
+  font-family: var(--font-1);
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #fff;
+  width: 4rem;
+}
+
+select {
+  margin-left: 5.5rem;
+}
+
+.bagDesc,
+.bagPoint li {
+  font-family: var(--font-1);
+  font-size: 1rem;
+  font-weight: 200;
+  margin: 0.5rem;
+  padding: 0;
+}
+
+.bagPoint li {
+  list-style-type: circle;
+  margin: 0;
+}
+
+.dropdown {
+  margin-left: 0.5rem;
+}
+.dropdown a:hover {
+  color: #f2d5e8;
+}
+
+.dropdownList {
+  list-style-type: none;
+  font-family: var(--font-1);
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.list li,
+.list2 li {
+  font-size: 1rem;
+  color: black;
+  font-weight: 200;
+}
+.list,
+.list2 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+.dropdown ul ul {
+  /* transform: scaleY(0); */
+  transition: all 0.5s;
+  height: 0;
+  overflow: hidden;
+}
+
+.dropdown > .dropdownList:hover .list {
+  /* transform: scaleY(1); */
+  height: 100px;
+}
+.dropdown > .dropdownList:hover .list2 {
+  /* transform: scaleY(1); */
+  height: 200px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+#suggestions {
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.bagOne img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+#suggestions .bagOne {
+  display: inline-block;
+  margin: 0;
+}
+
+.bagOne {
+  width: 10em;
+}
+.p {
+  font-family: var(--font-1);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.similar {
+  text-align: center;
+  text-shadow: 2px 4px 0px var(--color-1);
+}
+
+.productView {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.hide {
+  display: block;
+}
+@media only screen and (min-width: 900px) {
+  .productView {
+    display: flex;
+    flex-direction: row;
+  }
+  #productDesc {
+    position: sticky;
+    top: 0;
+    width: 80%;
+    height: 20rem;
+    margin: 3rem;
+  }
+
+  .product-pic img {
+    max-width: 70%;
+    display: block;
+    margin: 3rem auto;
+    height: auto;
+    padding: 0;
+  }
+  .product-pic {
+    flex-direction: column;
+  }
+  .similar {
+    margin-top: 10rem;
+  }
+
+  .bagOne {
+    width: 25em;
+  }
+
+  .lineTwo {
+    flex-direction: row;
+    /* justify-content: flex-start;
+    align-self: flex-start; */
+  }
+
+  .priceBag {
+    align-self: left;
+    margin: 0.6rem;
+    padding: 0;
+  }
+
+  select {
+    margin-left: 0;
+    margin: 0;
+  }
+  .addCart {
+    align-self: left;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .addCart2 {
+    align-self: left;
+    background-color: white;
+    font-family: var(--font-1);
+    font-size: 0.8rem;
+    border: solid 2px black;
+    border-radius: 20px;
+    width: 110px;
+    height: 50px;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 1rem 0.2rem;
+  }
+  .addCart2:hover {
+    background-color: black;
+    color: white;
+  }
+  .dropdown > .dropdownList:hover .list2 {
+    /* transform: scaleY(1); */
+    height: 140px;
+  }
+
+  p {
+    display: none;
+  }
+
+  .bagDesc {
+    display: block;
+  }
+}

@@ -14,3 +14,4 @@ function removeHidden() {
     .addEventListener("mousedown", addHidden);
   document.querySelector("#menu").classList.remove("hidden");
 }
+document.addEventListener("click", (x) => 0);
