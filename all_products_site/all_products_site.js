@@ -66,7 +66,43 @@ function showProduct(data){
     myCopy.querySelector("img.product-image").src = data.photo
 
     //  myCopy.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
-    //CIRCLE COLOUR???
+
+
+    // setting circle colour under product image
+
+    if (data.colour == "Beige"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "#F2E0CC";
+    }
+    if (data.colour == "Black"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "#000000";
+    }
+    if (data.colour == "Blue"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "#21d3ff";
+    }
+    if (data.colour == "Gold"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "rgb(239, 195, 52)";
+    }
+    if (data.colour == "Green"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "rgb(2, 173, 45)";
+    }
+    if (data.colour == "Pink"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "#ff64e5";
+    }
+    if (data.colour == "Red"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "#ff2d2d";
+    }
+    if (data.colour == "Silver"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "#b6b6b6";
+    }
+    if (data.colour == "Yellow"){
+        myCopy.querySelector("p.product-circle_color").style.backgroundColor = "#ffee00";
+    }
+
+
+
+
+
+
 
     //changing content when sale, sold out etc
 
@@ -220,6 +256,8 @@ function setup_bag_types_listener(container_type_of_bags) {
         type.addEventListener(
             "click", click_bag_type.bind(null, type, bag_types))
     })
+
+
 }
 
 function setup_filters_listener(container_filters) {
