@@ -1,7 +1,7 @@
 //finding a value of "category" from URL
 
 // const urlParams = new URLSearchParams(window.location.search);
-// const categorycategory);
+// const category = ;
 // document.querySelector("").textContent = category;
 
 // 1
@@ -58,8 +58,8 @@ function showProduct(data){
 
     //clone it
     const myCopy = product_template.cloneNode(true);
-    //change content
 
+    //change content
     myCopy.querySelector("h3.product-name").textContent = data.name
     myCopy.querySelector("img.product-image").alt = data.name
 
@@ -68,7 +68,7 @@ function showProduct(data){
     //  myCopy.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
     //CIRCLE COLOUR???
 
-    //changing content when sale, sold out etc
+//changing content when sale, sold out etc
 
     if (url.sale == true) {
         myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
@@ -76,8 +76,23 @@ function showProduct(data){
     } else {
         myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
     }
+
+    //changin links to get to single product
+    const pLinks = myCopy.querySelectorAll(".productlistLink");
+    pLinks.forEach(addNewLink);
+
+
+
+    function addNewLink(item) {
+        item.href = `../product-view.html?id=${data._id}`;
+
+    }
+
+    
+
     // const aEl = myCopy.querySelector("a");
     // aEl.href = "product.html?id=" + url_id;
+    // <article class="single-product"></article>
 
     //grab parent
     const parent = document.querySelector("#product_list")
