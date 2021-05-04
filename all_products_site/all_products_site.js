@@ -20,30 +20,24 @@
 
 
 
-// const url = "https://kea-alt-del.dk/t7/api/products?limit=100";
 
 
 
-//adding the source from where we fetch data
-
-// const url = "https://kea-alt-del.dk/t7/api/products?category=" + category; 
 const url = "https://kea2021-907c.restdb.io/rest/bags?"
 const header = {
     "method": "GET",
     "headers": {
         "x-apikey": "602e264f5ad3610fb5bb6267",
         "Content-Type": "application/json"
+        }
     }
-}
-console.log(url)
-
 
 fetch(url, header)
     .then((res) => res.json())
     .then(response => {
-        console.log(response)
+        // console.log(response)
         response.forEach(product => {
-            showProduct(product)
+            showProduct1(product)
         })
     })
     .catch(err => {
@@ -51,10 +45,10 @@ fetch(url, header)
     });
 
 
-function showProduct(data){
+function showProduct1(data){
     //grab the template
     const product_template = document.querySelector("template.product-template").content
-    console.log(product_template)
+    // console.log(product_template)
 
     //clone it
     const myCopy = product_template.cloneNode(true);
@@ -81,7 +75,8 @@ function showProduct(data){
 
     //grab parent
     const parent = document.querySelector("#product_list")
-    console.log(parent)
+    // console.log(parent)
+
     //append
     parent.appendChild(myCopy)
 
@@ -104,8 +99,91 @@ let current_filters = {
 
 // load data function
 
+function showProduct(data){
+    //grab the template
+    const product_template = document.querySelector("template.product-template").content
+    // console.log(product_template)
+
+    //clone it
+    const myCopy = product_template.cloneNode(true);
+    //change content
+
+    myCopy.querySelector("h3.product-name").textContent = data.name
+    myCopy.querySelector("img.product-image").alt = data.name
+
+    myCopy.querySelector("img.product-image").src = data.photo
+
+    //  myCopy.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+    //CIRCLE COLOUR???
+
+    //changing content when sale, sold out etc
+
+    if (url.sale == true) {
+        myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
+        myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
+    } else {
+        myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
+    }
+    // const aEl = myCopy.querySelector("a");
+    // aEl.href = "product.html?id=" + url_id;
+
+    //grab parent
+    const parent = document.querySelector("#product_list")
+    // console.log(parent)
+
+    //append
+    parent.appendChild(myCopy)
+
+}
+
+function resetProducts() {
+    container_product_list = document.querySelector("#product_list")
+    let products = [...container_product_list.children]
+    
+    // removes first element from the array (in this case template article)
+    products = products.slice(1)
+    
+    products.forEach((product) => {
+        product.remove()
+    })
+}
+
+
+
+
+
+
+
+
 function load_data() {
     console.log('loading_data...')
+
+    // https://kea2021-907c.restdb.io/rest/bags?q={"typeOfTheBag": "Shoulderbags"}
+    // if 
+    const url = `https://kea2021-907c.restdb.io/rest/bags?q={"typeOfTheBag":"${current_filters.bag_types}"}`
+
+
+    const header = {
+    "method": "GET",
+    "headers": {
+        "x-apikey": "602e264f5ad3610fb5bb6267",
+        "Content-Type": "application/json"
+        }
+    }   
+
+    // console.log(url)
+    fetch(url, header)
+        .then((res) => res.json())
+        .then(response => {
+            // console.log(response)
+            resetProducts()
+            response.forEach(product => {
+                showProduct(product)
+            })
+        })
+        .catch(err => {
+            console.error(err);
+        });
 }
 
 
@@ -143,8 +221,15 @@ function click_bag_type(clicked_type, all_bag_types) {
         type.classList.remove("selected_type")
     })
     clicked_type.classList.add("selected_type")
+
     // add selected bag type name to filtering
-    current_filters.bag_types = clicked_type.getElementsByClassName("text-bag_type")[0].textContent
+
+
+    clicked_type = clicked_type.getElementsByClassName("text-bag_type")[0].textContent
+    clicked_type = clicked_type.replace(/ /g, ''); // removing spaces from the string
+    
+    current_filters.bag_types = clicked_type
+    // console.log(current_filters.bag_types)
 
     load_data()
 }
@@ -287,7 +372,7 @@ function main() {
     setup_filters_listener(container_filters)
     setup_wishlist_listener(container_product_list)
 
-    load_data()
+    // load_data()
 }
 
 main()
