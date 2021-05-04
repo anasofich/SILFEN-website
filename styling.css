@@ -276,7 +276,7 @@ li {
     flex-direction: column;
   }
   .similar {
-    margin-top: 10rem;
+    margin-top: 30rem;
   }
 
   .bagOne {
@@ -339,5 +339,13 @@ li {
 
   .bagDesc {
     display: block;
+  }
+
+  .price {
+    text-align: center;
+    justify-content: center;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
   }
 }
