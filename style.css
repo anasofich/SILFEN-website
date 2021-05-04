@@ -125,124 +125,101 @@ input:checked + .slider:before {
 
 /*BURGERMENU*/
 
-#menu a {
-  text-decoration: none;
-  color: #232323;
-  transition: color 0.3s ease;
-  text-align: center;
-  font-family: var(--font-1);
-}
-
-#menu a li {
-  margin-left: 12%;
-  font-size: 1.4rem;
-}
-
-#menu a:hover {
-  color: tomato;
-}
-
-#menuToggle {
-  display: block;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  -webkit-user-select: none;
-  user-select: none;
-  z-index: 1;
+#menu-overlay {
   position: fixed;
-}
-
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
-  -webkit-touch-callout: none;
-}
-
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: #cdcdcd;
-  border-radius: 3px;
-  z-index: 2;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  opacity: 1;
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu {
-  width: 100%;
-  height: 692px;
-  margin: -100px 0 0 0;
-  padding: 50px;
-  padding-top: 125px;
-  right: -21px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: #fff;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  transform: scale(0);
+  transition: 0.5s;
+  z-index: 2; 
 }
 
-.hidden {
-  display: none;
+#menu-overlay.active {
+  transform: scale(1);
 }
 
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
+#menu-overlay ul {
+  position: relative;
+  padding:0;
+  margin:0;
 }
 
-#menuToggle input:checked ~ ul {
-  transform: none;
-  opacity: 1;
+#menu-overlay ul li {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  display: block;
 }
 
-@media screen and (max-width: 768px) {
-  #menu {
-    transform: none;
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  }
+#menu-overlay ul li a {
+  text-decoration: none;
+  position: relative;
+  font-size: 1.5em;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  color: #000;
+  display: inline-block;
 }
+
+#menu-overlay ul li a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #000;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: right;
+  transition: 0.5s transform;
+}
+
+#menu-overlay ul li a:hover:before {
+  transform: translateY(-50%) scaleX(1);
+  transform-origin: left;
+  transition: 0.5s transform;
+}
+
+#toggleIcon {
+  position: fixed;
+  top: 0px;
+  right: 20px;
+  margin:0;
+  padding:0;
+  z-index: 3; /*changed from 2 to 3 bc changes in slider*/
+  color: #000;
+  cursor: pointer;
+}
+
+#toggleIcon p {
+  color: #000;
+  font-size: 1.5em;
+  padding:0;
+  margin:0;
+  margin-top: 13%;
+}
+
+#toggleIcon.active {
+  text-decoration: line-through;
+  color: var(--color-1);
+}
+
+#toggleIcon p:hover {
+  opacity: 50%;
+}
+
 
 /*SILFEN/PLAY SPLIT HEADER*/
 #silfenSplit img {
   width: 100%;
+  height:93%;
   display: block;
 }
 
@@ -253,24 +230,9 @@ input:checked + .slider:before {
 
 #playSplit img {
   width: 100%;
+  height:99.7%;
   margin: 0;
   display: block;
-}
-
-#silfenSplit .info {
-  width: 85%;
-  position: absolute;
-  top: 21%;
-  left: 7.5%;
-  z-index: 0;
-}
-
-#playSplit .info {
-  width: 85%;
-  position: absolute;
-  top: 63%;
-  left: 7.5%;
-  z-index: 0;
 }
 
 .shopS {
@@ -281,7 +243,7 @@ input:checked + .slider:before {
   color: white;
   transition: all 0.2s;
   position: absolute;
-  top: 33%;
+  top: 36%;
   left: 33%;
 }
 
@@ -297,7 +259,7 @@ input:checked + .slider:before {
   color: white;
   transition: all 0.2s;
   position: absolute;
-  top: 75%;
+  top: 84%;
   left: 35%;
 }
 
@@ -314,23 +276,10 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-#newArrivals h1 {
-  font-family: var(--font-1);
-  font-size: 2rem;
-  font-weight: 200;
-  margin: 0;
-  text-shadow: 1.5px 1.5px #9ad9b3;
-}
-
-#newArrivals p {
-  font-family: var(--font-1);
-  font-size: 1.3rem;
-  font-weight: 200;
-  margin-bottom: 0;
-}
-
 #newArrivals img {
   width: 100%;
+  margin-top: 8%;
+  margin-bottom: 5%;
 }
 
 .shopNA {
@@ -589,19 +538,7 @@ footer {
 
 #playSplit img {
   width: 100%;
-  margin-top:4.9%;
-}
-
-#silfenSplit .info {
-  width: 30%;
-  top: 55%;
-  left: 10%;
-}
-
-#playSplit .info {
-  width: 30%;
-  top: 56%;
-  left: 60%;
+  margin-top:4.5%;
 }
 
 .shopS {
@@ -610,7 +547,7 @@ footer {
 }
 
 .shopP {
-  top: 74%;
+  top: 75.4%;
   left: 71%;
 }
 
@@ -698,6 +635,75 @@ footer {
 }
 
 .seeMore:hover {
+  background-color: var(--color-1);
+}
+
+.seeMore {
+  background-color: var(--color-2);
+  border-radius: 2em;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s;
+  outline: none;
+  border: none;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  font-size: 0.9rem;
+}
+
+.seeMore:hover {
+  background-color: var(--color-1);
+}
+
+
+/*SOMEPOST*/
+#somePost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9ad9b32a;
+}
+
+#somePost img {
+  display:none;
+}
+
+#somePost h1 {
+  font-family: var(--font-1);
+  font-weight: 300;
+  color: #9ad9b3d5;
+  font-size: 1.2rem;
+}
+#somePost h2 {
+  font-family: var(--font-1);
+  font-weight: 300;
+  color: #9ad9b3;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+#somePost p {
+  font-family: var(--font-1);
+  font-weight: 600;
+  color: #9ad9b3;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.instaButton {
+  background-color: var(--color-2);
+  border-radius: 2em;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s;
+  outline: none;
+  border: none;
+  margin-bottom: 10%;
+  font-size: 0.9rem;
+}
+
+.instaButton:hover {
   background-color: var(--color-1);
 }
 
