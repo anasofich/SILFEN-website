@@ -108,14 +108,15 @@ function fetchAll() {
         //setting colour of circles under images
         setCirclesForProducts(data, myCopy)
         
-
+      
         //changing content when sale, sold out etc
 
-        if (url.sale == true) {
+        if (data.sale == true) {
             myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
             myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
         } else {
             myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
+            console.log("nie on sale")
         }
         // const aEl = myCopy.querySelector("a");
         // aEl.href = "product.html?id=" + url_id;
@@ -159,13 +160,14 @@ function showProduct(data, url){
     setCirclesForProducts(data, myCopy)
         
 
-    //changing content when sale, sold out etc
+     //changing content when sale, sold out etc
 
-    if (url.sale == true) {
+     if (data.sale == true) {
         myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
         myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
     } else {
         myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
+        console.log("nie on sale")
     }
     // const aEl = myCopy.querySelector("a");
     // aEl.href = "product.html?id=" + url_id;
@@ -192,10 +194,74 @@ function resetProducts() {
 }
 
 
+function load_data_sales_or_newarr() {
+    console.log('loading_data...')
+
+    if (current_filters.sales == true) {
+            
+            const url = `https://kea2021-907c.restdb.io/rest/bags?q={"sale": true}`
+        
+            const header = {
+            "method": "GET",
+            "headers": {
+                "x-apikey": "602e264f5ad3610fb5bb6267",
+                "Content-Type": "application/json"
+                }
+            }   
+        
+            // console.log(url)
+            fetch(url, header)
+                .then((res) => res.json())
+                .then(response => {
+                    // console.log(response)
+                    resetProducts()
+                    response.forEach(product => {
+                        showProduct(product, url)
+                    })
+                })
+                .catch(err => {
+                    console.error(err)
+                })
+    }
+
+
+
+    if (current_filters.newarr == true) {
+        
+        const url = `https://kea2021-907c.restdb.io/rest/bags?q={"newProducts": true}`
+    
+        const header = {
+        "method": "GET",
+        "headers": {
+            "x-apikey": "602e264f5ad3610fb5bb6267",
+            "Content-Type": "application/json"
+            }
+        }   
+    
+        // console.log(url)
+        fetch(url, header)
+            .then((res) => res.json())
+            .then(response => {
+                // console.log(response)
+                resetProducts()
+                response.forEach(product => {
+                    showProduct(product, url)
+                })
+            })
+            .catch(err => {
+                console.error(err)
+            })
+
+
+    }
+
+}
+
+
 
 
 function load_data_bag_type() {
-    console.log('loading_data...')
+    console.log('loading_data_bag_type...')
 
     // https://kea2021-907c.restdb.io/rest/bags?q={"typeOfTheBag": "Shoulderbags"}
     // if 
@@ -292,7 +358,7 @@ function click_sales_filter(sales_button) {
         current_filters.sales = true
     }
 
-    load_data()
+    load_data_sales_or_newarr()
 }
 
 function click_newarr_filter(newarr_button) {
@@ -303,7 +369,7 @@ function click_newarr_filter(newarr_button) {
         current_filters.newarr = true
     }
 
-    load_data()
+    load_data_sales_or_newarr()
 }
 
 function click_collection_filter(collection_button) {
