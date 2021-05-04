@@ -39,6 +39,7 @@ a.selected_type {
     display: grid;
     grid-column: 3/4;
     grid-row: 3/4;
+    height: min-content;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
     gap: 2rem;
