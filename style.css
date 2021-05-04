@@ -35,8 +35,9 @@ h1 {
 #toogleMenu {
   background-color: #fff;
   margin: 0;
-  position:fixed;
+  position: fixed;
   z-index: 1;
+  margin-bottom: 5rem;
 }
 
 #menuLeft img {
@@ -138,7 +139,7 @@ input:checked + .slider:before {
   overflow-y: auto;
   transform: scale(0);
   transition: 0.5s;
-  z-index: 2; 
+  z-index: 2;
 }
 
 #menu-overlay.active {
@@ -147,8 +148,8 @@ input:checked + .slider:before {
 
 #menu-overlay ul {
   position: relative;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
 
 #menu-overlay ul li {
@@ -191,18 +192,18 @@ input:checked + .slider:before {
   position: fixed;
   top: 0px;
   right: 20px;
-  margin:0;
-  padding:0;
-  z-index: 3; /*changed from 2 to 3 bc changes in slider*/
-  color: #000;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+  background-color: #fff;
   cursor: pointer;
 }
 
 #toggleIcon p {
   color: #000;
   font-size: 1.5em;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   margin-top: 13%;
 }
 
@@ -215,11 +216,10 @@ input:checked + .slider:before {
   opacity: 50%;
 }
 
-
 /*SILFEN/PLAY SPLIT HEADER*/
 #silfenSplit img {
   width: 100%;
-  height:93%;
+  height: 93%;
   display: block;
 }
 
@@ -230,9 +230,12 @@ input:checked + .slider:before {
 
 #playSplit img {
   width: 100%;
-  height:99.7%;
+  height: 99.7%;
   margin: 0;
   display: block;
+}
+#playSplit {
+  background-color: var(--color-1);
 }
 
 .shopS {
@@ -248,7 +251,7 @@ input:checked + .slider:before {
 }
 
 .shopS:hover {
-  background-color: var(--color-1);
+  background-color: var(--color-3);
 }
 
 .shopP {
@@ -264,7 +267,7 @@ input:checked + .slider:before {
 }
 
 .shopP:hover {
-  background-color: var(--color-1);
+  background-color: var(--color-3);
 }
 
 /*NEW ARRIVALS*/
@@ -278,7 +281,7 @@ input:checked + .slider:before {
 
 #newArrivals img {
   width: 100%;
-  margin-top: 8%;
+  margin-top: 3%;
   margin-bottom: 5%;
 }
 
@@ -294,7 +297,7 @@ input:checked + .slider:before {
 }
 
 .shopNA:hover {
-  background-color: var(--color-1);
+  background-color: var(--color-3);
 }
 
 #sustainability img {
@@ -327,7 +330,7 @@ input:checked + .slider:before {
 }
 
 .readMore:hover {
-  background-color: var(--color-1);
+  background-color: var(--color-3);
 }
 
 #bestsellers {
@@ -337,9 +340,15 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-#bestsellers img {
+#mobile img {
   width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
   box-shadow: 0px 10px 29px 3px #9ad9b338;
+}
+
+#desktop img {
+  display: none;
 }
 
 #bestsellers h1 {
@@ -369,7 +378,7 @@ input:checked + .slider:before {
 }
 
 .seeMore:hover {
-  background-color: var(--color-1);
+  background-color: var(--color-3);
 }
 
 #somePost {
@@ -379,8 +388,13 @@ input:checked + .slider:before {
   background-color: #9ad9b32a;
 }
 
-#somePost img {
+#spMobile img {
   width: 90%;
+  margin-left: 7.5%;
+}
+
+#spDesktop img {
+  display: none;
 }
 
 #somePost h1 {
@@ -419,7 +433,7 @@ input:checked + .slider:before {
 }
 
 .instaButton:hover {
-  background-color: var(--color-1);
+  background-color: var(--color-3);
 }
 
 /*footer*/
@@ -461,13 +475,17 @@ footer {
 }
 
 .signUp:hover {
-  background-color: var(--color-1);
+  background-color: var(--color-3);
 }
 
 #footerSome {
   margin-top: 10%;
   display: flex;
   justify-content: center;
+}
+
+#footerSome img{
+  width: 60%;
 }
 
 #footerSome a {
@@ -497,215 +515,262 @@ footer {
   opacity: 60%;
 }
 
-
-
-@media only screen and (min-width: 1200px) {
-/*TOGGLERMENU*/
-#menuLeft img {
-  width: 8%;
-  padding-left: 2%;
-  margin-right: 3.3%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+#help_footer {
+  display: none;
 }
-
-.switch {
-  width: 47.5px;
-  height: 24px;
-  margin-bottom: 0.5%;
-  top: 32%;
-  left: 9%;
+#company_footer {
+  display: none;
 }
-
-.slider:before {
-  height: 18px;
-  width: 18px;
-  left: 2px;
-  bottom: 3px;
-}
-
-
-/*SILFEN/PLAY SPLIT HEADER*/
-#grid{
-  display:grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
-}
-
-#silfenSplit img {
-  margin-top:8.5%;
-}
-
-#playSplit img {
-  width: 100%;
-  margin-top:4.5%;
-}
-
-.shopS {
-  top: 75%;
-  left: 20%;
-}
-
-.shopP {
-  top: 75.4%;
-  left: 71%;
-}
-
-.shopP:hover {
-  background-color: var(--color-3);
-}
-.shopS:hover {
-  background-color: var(--color-3);
-}
-
-/*NEW ARRIVALS*/
-
-#newArrivals img {
-  width: 80%;
-}
-
-.shopNA {
-  margin-bottom: 10%;
-}
-
-.shopNA:hover {
-  background-color: var(--color-3);
-}
-
-#sustainability img {
-  width: 65%;
-  margin-top: 8%;
-  margin-left: 17.5%;
-  margin-bottom: 0%;
-}
-
-#sustainability p {
-  margin-left: 17.5%;
-  width: 66%;
-  font-size: 1.1rem;
-  margin-bottom: 2.5%;
-}
-
-.readMore {
-  margin-left:40%;
-  margin-right: 37%;
-  margin-bottom: 2%;
-}
-
-.readMore:hover {
-  background-color: var(--color-3);
-}
-
-/*BESTSELLERS*/
-#bestsellers {
-  background-color: #7bafd43a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#bestsellers img {
+#terms_footer {
   display: none;
 }
 
-#bestsellers h1 {
-  font-family: var(--font-1);
-  font-weight: 200;
-  text-shadow: 1px 1px #9ad9b3;
-  text-align: center;
+.navbar {
+  display: none;
 }
 
-#bestsellers p {
-  font-family: var(--font-1);
-  font-weight: 600;
-  text-align: center;
+@media only screen and (max-width: 500px) {
+  .navbar {
+    background-color: #fff;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    padding: 10px 16px;
+    margin-left: 18px;
+    text-decoration: none;
+  }
+
+  .navbar img {
+    width: 65%;
+  }
 }
 
-.seeMore {
-  background-color: var(--color-2);
-  border-radius: 2em;
-  padding: 10px 20px;
-  color: white;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  font-size: 0.9rem;
-}
+@media only screen and (min-width: 800px) {
+  /*TOGGLERMENU*/
+  #menuLeft img {
+    width: 8%;
+    padding-left: 2%;
+    margin-right: 3.3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
 
-.seeMore:hover {
-  background-color: var(--color-1);
-}
+  .switch {
+    width: 47.5px;
+    height: 24px;
+    margin-bottom: 0.5%;
+    top: 32%;
+    left: 9%;
+  }
 
-.seeMore {
-  background-color: var(--color-2);
-  border-radius: 2em;
-  padding: 10px 20px;
-  color: white;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  font-size: 0.9rem;
-}
+  .slider:before {
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 3px;
+  }
 
-.seeMore:hover {
-  background-color: var(--color-1);
-}
+  /*SILFEN/PLAY SPLIT HEADER*/
+  #grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+  }
 
+  #silfenSplit img {
+    margin-top: 8.5%;
+  }
 
-/*SOMEPOST*/
-#somePost {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #9ad9b32a;
-}
+  #playSplit img {
+    width: 100%;
+    margin-top: 4.5%;
+  }
 
-#somePost img {
-  display:none;
-}
+  .shopS {
+    top: 50em;
+    left: 20%;
+  }
 
-#somePost h1 {
-  font-family: var(--font-1);
-  font-weight: 300;
-  color: #9ad9b3d5;
-  font-size: 1.2rem;
-}
-#somePost h2 {
-  font-family: var(--font-1);
-  font-weight: 300;
-  color: #9ad9b3;
-  font-size: 1.4rem;
-  text-align: center;
-  margin-top: 0;
-}
+  .shopP {
+    top: 75.4%;
+    left: 71%;
+  }
 
-#somePost p {
-  font-family: var(--font-1);
-  font-weight: 600;
-  color: #9ad9b3;
-  font-size: 1.4rem;
-  text-align: center;
-}
+  .shopP:hover {
+    background-color: var(--color-3);
+  }
+  .shopS:hover {
+    background-color: var(--color-3);
+  }
 
-.instaButton {
-  background-color: var(--color-2);
-  border-radius: 2em;
-  padding: 10px 20px;
-  color: white;
-  transition: all 0.2s;
-  outline: none;
-  border: none;
-  margin-bottom: 10%;
-  font-size: 0.9rem;
-}
+  /*NEW ARRIVALS*/
 
-.instaButton:hover {
-  background-color: var(--color-1);
-}
+  #newArrivals img {
+    width: 80%;
+    margin-top: 7%;
+  }
 
+  .shopNA {
+    margin-bottom: 10%;
+  }
 
+  .shopNA:hover {
+    background-color: var(--color-3);
+  }
+
+  #sustainability img {
+    width: 65%;
+    margin-top: 8%;
+    margin-left: 17.5%;
+    margin-bottom: 0%;
+  }
+
+  #sustainability p {
+    margin-left: 17.5%;
+    width: 66%;
+    font-size: 1.1rem;
+    margin-bottom: 2.5%;
+  }
+
+  .readMore {
+    margin-left: 40%;
+    margin-right: 37%;
+    margin-bottom: 2%;
+  }
+
+  .readMore:hover {
+    background-color: var(--color-3);
+  }
+
+  /*BESTSELLERS*/
+  #bestsellers {
+    background-color: #7bafd43a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #mobile img {
+    display: none;
+  }
+
+  #desktop img {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #bestsellers h1 {
+    margin-top: 4%;
+  }
+
+  #bestsellers p {
+    display: none;
+  }
+
+  .seeMore {
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+
+  /*SOMEPOST*/
+
+  #spMobile img {
+    display: none;
+  }
+
+  #spDesktop img {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #somePost h1 {
+    margin-top: 4%;
+    font-weight: 500;
+    font-size: 1.7rem;
+  }
+
+  #somePost h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+
+  #somePost p {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  .instaButton {
+    margin-bottom: 7%;
+  }
+
+  /*footer*/
+  footer {
+    padding-top: 3%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    list-style: none;
+  }
+
+  #newsletter {
+    width: 30%;
+    padding-top: 1%;
+    margin-bottom: 5%;
+    margin-left: 0%;
+    height: 25vh;
+  }
+
+  #newsletter p {
+    font-family: var(--font-1);
+    font-size: 1rem;
+    width: 93%;
+    padding-left: 4.5%;
+  }
+
+  #help_footer {
+    display: flex;
+  }
+
+  #company_footer {
+    display: flex;
+  }
+
+  #terms_footer {
+    display: flex;
+  }
+
+  #footerLinks {
+    display: none;
+  }
+
+  #help_footer li a,
+  #company_footer li a,
+  #terms_footer li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.7rem;
+  }
+
+  #footerSome {
+    position: absolute;
+    margin-top: 12%;
+  }
+
+  ul {
+    list-style: none;
+  }
 }

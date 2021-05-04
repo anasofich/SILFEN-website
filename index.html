@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
     <title>SILFEN STUDIO</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="image/png" href="images/sortlogo.png" />
@@ -23,6 +24,7 @@
         /></a>
       </section>
     </div>
+
 
     <div id="toggleIcon" onclick="menuToggle()"><p>Menu</p></div>
       <div id="menu-overlay">
@@ -49,13 +51,11 @@
     <section id="grid">
       <section id="silfenSplit">
         <img src="images/silfen_header.png" alt="silfenHeader" />
-        <div class="info">
         <button class="shopS">Shop SILFEN</button>
       </section>
 
       <section id="playSplit">
         <img src="images/play_header.png" alt="playHeader" />
-        <div class="info">
         <button class="shopP">Shop PLAY</button>
       </section>
 
@@ -75,8 +75,11 @@
     </section>
 
     <section id="bestsellers">
-      <h1>BESTSELLERS</h1>
+      <h1>MOST POPULAR</h1>
+      <div id="mobile">
       <img src="photos/yasmin-recycled-blue.jpeg" />
+    </div>
+    <div id="desktop"> <img src="images/bestsellers.png"> </div>
       <p>YASMIN RECYCLED <br />300 DKK</p>
       <button class="seeMore">SEE MORE</button>
     </section>
@@ -87,10 +90,19 @@
         SHARE YOUR PICTURE USING <br />
         #SILFENVIBES
       </h2>
-      <img src="images/some_pics.png" alt="some pics" />
+      <div id="spMobile">
+      <img src="images/some_pics.png" alt="some pics" /></div>
+      <div id="spDesktop">
+        <img src="images/some.png" alt="some pics" /></div>
       <p>@SILFENSTUDIO</p>
       <button class="instaButton">CHECK OUT OUR PROFILE</button>
     </section>
+
+    <div class="navbar">
+        <li><a href="#"><img src="images/search.png"></a></li>
+        <li><a href="#"><img src="images/lp_wishlist.svg"></a></li>
+        <li><a href="shopping-bag.html"><img src="images/shopping_cart.svg"></a></li>
+      </div>
 
     <footer>
       <section id="newsletter">
@@ -108,6 +120,24 @@
         <button class="signUp">SIGN ME UP</button>
       </section>
 
+      <section id="terms_footer">
+        <ul>
+          <li><a href="#"><b>TERMS</b></a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </section>
+
+      <section id="company_footer">
+        <ul>
+          <li><a href="#"><b>COMPANY</b></a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </section>
+
       <section id="footerSome">
         <a href="https://www.instagram.com/silfenstudio/"
           ><img src="images/insta.png"
@@ -119,11 +149,25 @@
           ><img src="images/youtube.png"
         /></a>
       </section>
+
+      <section id="help_footer">
+        <ul>
+          <li><a href="#"><b>HELP</b></a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Payment</a></li>
+        </ul>
+      </section>
+
       <section id="footerLinks">
         <a href="help.html">HELP</a>
         <a href="company.html">COMPANY</a>
         <a href="terms.html">TERMS</a>
       </section>
+
+      
     </footer>
     <script src="script.js"></script>
   </body>
