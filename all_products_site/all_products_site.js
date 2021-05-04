@@ -20,7 +20,9 @@
 
 
 
-// global data
+// ================================ global data ================================
+
+
 
 let current_filters = {
     bag_types: "VIEWALL",
@@ -31,6 +33,158 @@ let current_filters = {
 }
 
 
+
+// ================================ load data function ================================
+
+
+
+function fetchAll() {
+    const url = "https://kea2021-907c.restdb.io/rest/bags?"
+    const header = {
+        "method": "GET",
+        "headers": {
+            "x-apikey": "602e264f5ad3610fb5bb6267",
+            "Content-Type": "application/json"
+            }
+        }
+
+    fetch(url, header)
+        .then((res) => res.json())
+        .then(response => {
+            // console.log(response)
+            console.log("reset1")
+            resetProducts()
+            response.forEach(product => {
+                showProduct(product)
+            })
+            setup_wishlist_listener()
+        })
+        .catch(err => {
+            console.error(err)
+        })
+
+}
+
+function load_data_sales_or_newarr() {
+    const header = {
+        "method": "GET",
+        "headers": {
+            "x-apikey": "602e264f5ad3610fb5bb6267",
+            "Content-Type": "application/json"
+            }
+    }
+    let url = ''
+    if (current_filters.sales == true && current_filters.newarr == true) {
+        url = `https://kea2021-907c.restdb.io/rest/bags?q={"sale": true, "newProducts": true}`
+    }
+    else if (current_filters.sales == true) {
+        // current_filters.newarr == false
+        // document.querySelector(".filter-new_arrivals").children[0].children[0].src = "../images/icon-unselected_filtering_element.svg"
+        url = `https://kea2021-907c.restdb.io/rest/bags?q={"sale": true}`
+    }
+    else if (current_filters.newarr == true) {
+        // current_filters.sales == false
+        // document.querySelector(".filter-sale").children[0].children[0].src = "../images/icon-unselected_filtering_element.svg"
+        url = `https://kea2021-907c.restdb.io/rest/bags?q={"newProducts": true}`
+    }
+    else {
+        url = `https://kea2021-907c.restdb.io/rest/bags?`
+    }
+    fetch(url, header)
+        .then((res) => res.json())
+        .then(response => {
+            // console.log(response)
+            resetProducts()
+            response.forEach(product => {
+                showProduct(product, url)
+            })
+            setup_wishlist_listener()
+        })
+        .catch(err => {
+            console.error(err)
+        })
+}
+
+function load_data_bag_type() {
+    const url = `https://kea2021-907c.restdb.io/rest/bags?q={"typeOfTheBag":"${current_filters.bag_types}"}`
+    const header = {
+    "method": "GET",
+    "headers": {
+        "x-apikey": "602e264f5ad3610fb5bb6267",
+        "Content-Type": "application/json"
+        }
+    }   
+
+    fetch(url, header)
+        .then((res) => res.json())
+        .then(response => {
+            console.log("reset4")
+            resetProducts()
+            response.forEach(product => {
+                showProduct(product, url)
+            })
+            setup_wishlist_listener()
+        })
+        .catch(err => {
+            console.error(err);
+        });
+}
+
+
+// ================================ show products from data ================================
+
+
+function showProduct(data, url){
+    //grab the template
+    const product_template = document.querySelector("template.product-template").content
+    // console.log(product_template)
+
+    //clone it
+    const myCopy = product_template.cloneNode(true);
+    //change content
+
+    myCopy.querySelector("h3.product-name").textContent = data.name
+    myCopy.querySelector("img.product-image").alt = data.name
+    myCopy.querySelector("img.product-image").src = data.photo
+
+    //setting colour of circles under images
+    setCirclesForProducts(data, myCopy)
+        
+
+     //changing content when sale, sold out etc
+
+     if (data.sale == true) {
+        myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
+        myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
+    } else {
+        myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
+    }
+    // const aEl = myCopy.querySelector("a");
+    // aEl.href = "product.html?id=" + url_id;
+
+    //grab parent
+    const parent = document.querySelector("#product_list")
+    // console.log(parent)
+
+    //append
+    parent.appendChild(myCopy)
+}
+
+function resetProducts() {
+    container_product_list = document.querySelector("#product_list")
+    let products = [...container_product_list.children]
+    
+    // removes first element from the array (in this case template article)
+    products = products.slice(1)
+    
+    products.forEach((product) => {
+        product.remove()
+    })
+}
+
+
+
+// ================================ helper function (other usage) ================================
 
 
 
@@ -68,231 +222,9 @@ function setCirclesForProducts(data, myCopy){
 
 
 
-function fetchAll() {
-    const url = "https://kea2021-907c.restdb.io/rest/bags?"
-    const header = {
-        "method": "GET",
-        "headers": {
-            "x-apikey": "602e264f5ad3610fb5bb6267",
-            "Content-Type": "application/json"
-            }
-        }
-
-    fetch(url, header)
-        .then((res) => res.json())
-        .then(response => {
-            // console.log(response)
-            resetProducts()
-            response.forEach(product => {
-                showAllProducts(product)
-            })
-        })
-        .catch(err => {
-            console.error(err)
-        })
+// ================================ event listener functions ================================
 
 
-    function showAllProducts(data){
-        //grab the template
-        const product_template = document.querySelector("template.product-template").content
-        // console.log(product_template)
-
-        //clone it
-        const myCopy = product_template.cloneNode(true);
-        //change content
-
-        myCopy.querySelector("h3.product-name").textContent = data.name
-        myCopy.querySelector("img.product-image").alt = data.name
-        myCopy.querySelector("img.product-image").src = data.photo
-
-        //setting colour of circles under images
-        setCirclesForProducts(data, myCopy)
-        
-      
-        //changing content when sale, sold out etc
-
-        if (data.sale == true) {
-            myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
-            myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
-        } else {
-            myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
-            console.log("nie on sale")
-        }
-        // const aEl = myCopy.querySelector("a");
-        // aEl.href = "product.html?id=" + url_id;
-
-        //grab parent
-        const parent = document.querySelector("#product_list")
-        // console.log(parent)
-
-        //append
-        parent.appendChild(myCopy)
-
-    }
-
-}
-
-fetchAll()
-
-
-
-
-
-
-
-// load data function
-
-function showProduct(data, url){
-    //grab the template
-    const product_template = document.querySelector("template.product-template").content
-    // console.log(product_template)
-
-    //clone it
-    const myCopy = product_template.cloneNode(true);
-    //change content
-
-    myCopy.querySelector("h3.product-name").textContent = data.name
-    myCopy.querySelector("img.product-image").alt = data.name
-
-    myCopy.querySelector("img.product-image").src = data.photo
-
-    //setting colour of circles under images
-    setCirclesForProducts(data, myCopy)
-        
-
-     //changing content when sale, sold out etc
-
-     if (data.sale == true) {
-        myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
-        myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
-    } else {
-        myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
-        console.log("nie on sale")
-    }
-    // const aEl = myCopy.querySelector("a");
-    // aEl.href = "product.html?id=" + url_id;
-
-    //grab parent
-    const parent = document.querySelector("#product_list")
-    // console.log(parent)
-
-    //append
-    parent.appendChild(myCopy)
-
-}
-
-function resetProducts() {
-    container_product_list = document.querySelector("#product_list")
-    let products = [...container_product_list.children]
-    
-    // removes first element from the array (in this case template article)
-    products = products.slice(1)
-    
-    products.forEach((product) => {
-        product.remove()
-    })
-}
-
-
-function load_data_sales_or_newarr() {
-    console.log('loading_data...')
-
-    if (current_filters.sales == true) {
-            
-            const url = `https://kea2021-907c.restdb.io/rest/bags?q={"sale": true}`
-        
-            const header = {
-            "method": "GET",
-            "headers": {
-                "x-apikey": "602e264f5ad3610fb5bb6267",
-                "Content-Type": "application/json"
-                }
-            }   
-        
-            // console.log(url)
-            fetch(url, header)
-                .then((res) => res.json())
-                .then(response => {
-                    // console.log(response)
-                    resetProducts()
-                    response.forEach(product => {
-                        showProduct(product, url)
-                    })
-                })
-                .catch(err => {
-                    console.error(err)
-                })
-    }
-
-
-
-    if (current_filters.newarr == true) {
-        
-        const url = `https://kea2021-907c.restdb.io/rest/bags?q={"newProducts": true}`
-    
-        const header = {
-        "method": "GET",
-        "headers": {
-            "x-apikey": "602e264f5ad3610fb5bb6267",
-            "Content-Type": "application/json"
-            }
-        }   
-    
-        // console.log(url)
-        fetch(url, header)
-            .then((res) => res.json())
-            .then(response => {
-                // console.log(response)
-                resetProducts()
-                response.forEach(product => {
-                    showProduct(product, url)
-                })
-            })
-            .catch(err => {
-                console.error(err)
-            })
-
-
-    }
-
-}
-
-
-
-
-function load_data_bag_type() {
-    console.log('loading_data_bag_type...')
-
-    // https://kea2021-907c.restdb.io/rest/bags?q={"typeOfTheBag": "Shoulderbags"}
-    // if 
-    const url = `https://kea2021-907c.restdb.io/rest/bags?q={"typeOfTheBag":"${current_filters.bag_types}"}`
-
-
-    const header = {
-    "method": "GET",
-    "headers": {
-        "x-apikey": "602e264f5ad3610fb5bb6267",
-        "Content-Type": "application/json"
-        }
-    }   
-
-    // console.log(url)
-    fetch(url, header)
-        .then((res) => res.json())
-        .then(response => {
-            // console.log(response)
-            resetProducts()
-            response.forEach(product => {
-                showProduct(product, url)
-            })
-        })
-        .catch(err => {
-            console.error(err);
-        });
-}
-
-
-// helper function (other usage)
 
 function toggle_click(button) {
     // changes only the visual style nothing else
@@ -306,8 +238,8 @@ function toggle_click(button) {
 
 function toggle_click_hearts(product) {
     // changes only the visual style of hearts on click nothing else
-    
-    let heart_icon = product.children[0].children[1]
+    let heart_icon = product.children[1].children[0]
+
     if (heart_icon.classList.contains("wishlist-on-product") == true) {
         heart_icon.classList.remove("wishlist-on-product")
         heart_icon.classList.add("wishlist-on-product-clicked")
@@ -317,8 +249,6 @@ function toggle_click_hearts(product) {
         heart_icon.classList.add("wishlist-on-product")
     }
 }
-
-// event listener functions
 
 function click_bag_type(clicked_type, all_bag_types) {
     // add class selection on div
@@ -339,16 +269,6 @@ function click_bag_type(clicked_type, all_bag_types) {
         load_data_bag_type()
     }
 }
-
-function setup_wishlist_listener(container_product_list) {
-    // let products = container_product_list.children
-    let products = [...container_product_list.children]
-    products.forEach((product) => {
-        product.addEventListener(
-            "click", toggle_click_hearts.bind(null, product))
-    })
-}
-
 
 function click_sales_filter(sales_button) {
     toggle_click(sales_button)
@@ -402,7 +322,20 @@ function click_material_filter(material_button) {
     load_data()
 }
 
-// setup functions (run only once)
+
+
+// ================================ setup functions (run only once) ================================
+
+
+
+function setup_wishlist_listener() {
+    const container_product_list = document.querySelector("#product_list")
+    products = [...container_product_list.children]
+
+    products.forEach(item => {
+        item.addEventListener('click', toggle_click_hearts.bind(null, item))
+    })
+}
 
 function setup_bag_types_listener(container_type_of_bags) {
     // hack! change HTMLCollection to list (forEach does not work on HTMLCollections...)
@@ -464,11 +397,16 @@ function setup_filter_sort_panel(container_filters, container_sorting, filter_bu
         'click', click_select_sorting.bind(null, container_filters, container_sorting, filter_button, sort_button))
 }
 
+
+
+// ============================ MAIN ===========================
+
+
+
 function main() {
     const container_type_of_bags = document.getElementById("filter-type_of_bag")
     const container_filters = document.getElementById("filter_by")
     const container_sorting = document.getElementById("sort_by")
-    const container_product_list = document.getElementById("product_list")
     const filter_button = document.getElementById("select_filtering")
     const sort_button = document.getElementById("select_sorting")
   
@@ -476,9 +414,8 @@ function main() {
     setup_filter_sort_panel(container_filters, container_sorting, filter_button, sort_button)
     setup_bag_types_listener(container_type_of_bags)
     setup_filters_listener(container_filters)
-    setup_wishlist_listener(container_product_list)
 
-    // load_data()
+    fetchAll()
 }
 
 main()

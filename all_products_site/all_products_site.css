@@ -276,6 +276,13 @@ h4.product-price {
     opacity: 60%;
 }
 
+a.filter-sale li p {
+    color: #c20000;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
 @media (max-width: 1400px) {
     #content_grid {
         display: grid;
