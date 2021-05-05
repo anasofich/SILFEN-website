@@ -32,6 +32,7 @@ h1 {
   gap: 0.5rem;
   margin-left: 1rem;
   font-size: 0.8rem;
+  margin-top: 4rem;
 }
 
 .backArrow {
@@ -50,7 +51,7 @@ h1 {
 
 .logIn {
   text-align-last: center;
-  margin-top: -1rem;
+  margin-top: 1rem;
 }
 
 .logIn span {

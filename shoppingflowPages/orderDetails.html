@@ -6,10 +6,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Order details</title>
     <link rel="stylesheet" href="shoppingflowStyle.css" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="shortcut icon" type="image/png" href="../images/sortlogo.png" />
   </head>
-  <body id="">
 
+
+  <header>
+    <div id="menuLeft">
+      <section id="toogleMenu">
+        <a href="index.html"
+          ><img src="../images/silfen_logo.png" alt="silfen_logo"
+        /></a>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <a href="index.html"
+          ><img src="../images/play_logo.png" alt="play_logo"
+        /></a>
+      </section>
+
+      <section id="menu_with_logo">
+        <div id="shopToggleIcon" onclick="shopMenuToggle()"><p>SHOP</p></div>
+        <div id="shop-menu-overlay">
+          <ul id="shop-menu">
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                >All Products</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                >New Products</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html">Sale</a>
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                >Most popular</a
+              >
+            </li>
+            <li>
+              <a href="../collectionsPages/collectionsMain.html">Collections</a>
+            </li>
+          </ul>
+
+          <ul id="shop-menu2">
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="../photos/kim-recycled-pink.jpeg" /><br />Bumbags &
+                Crossbody bags</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="../photos/ulrikka-recycled-blue.jpeg" /><br />Shoulder
+                bags</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="../photos/yasmin-recycled-blue.jpeg" /><br />Mini
+                bags</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="../photos/chillie-blue.jpg" /><br />Tote bags</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="../photos/ida-leather-black.jpeg" /><br />Wallets</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="../photos/protection-spray.png" />Care</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <a href="index.html"><img src="../images/silfen_logo.png" width="20%" alt="logo" /></a>
+
+        <div id="aboutToggleIcon" onclick="aboutMenuToggle()"><p>ABOUT</p></div>
+        <div id="about-menu-overlay">
+          <ul id="about-menu">
+            <li><a href="#">About Silfen</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="menubar">
+        <li>
+          <a href="#"><img src="../images/search.png" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../images/lp_wishlist.svg" /></a>
+        </li>
+        <li>
+          <a href="shopping-bag.html"><img src="../images/shopping_cart.svg" /></a>
+        </li>
+      </section>
+  </header>
+
+
+  <body id="">
     <section id="orderDetails">
     <div>
       <a class="backArrow" href="../index.html">
@@ -301,8 +408,89 @@
 </div>
 </section>
 
-<footer></footer>
+<div class="navbar">
+  <li>
+    <a href="#"><img src="../images/search.png" /></a>
+  </li>
+  <li>
+    <a href="#"><img src="../images/lp_wishlist.svg" /></a>
+  </li>
+  <li>
+    <a href="shopping-bag.html"><img src="../images/shopping_cart.svg" /></a>
+  </li>
+</div>
+
+<footer>
+  <section id="newsletter">
+    <p>
+      Sign up to our newsletter and <b>GET -10% OFF</b> your first order
+    </p>
+    <div class="input-group">
+      <label for="email"></label>
+      <input
+        type="text"
+        placeholder="Write your email here"
+        class="form-control"
+      />
+    </div>
+    <button class="signUp">SIGN ME UP</button>
+  </section>
+
+  <section id="terms_footer">
+    <ul>
+      <li>
+        <a href="#"><b>TERMS</b></a>
+      </li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Cookie Policy</a></li>
+    </ul>
+  </section>
+
+  <section id="company_footer">
+    <ul>
+      <li>
+        <a href="#"><b>COMPANY</b></a>
+      </li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Sustainability</a></li>
+      <li><a href="#">Careers</a></li>
+    </ul>
+  </section>
+
+  <section id="footerSome">
+    <a href="https://www.instagram.com/silfenstudio/"
+      ><img src="../images/insta.png"
+    /></a>
+    <a href="https://www.facebook.com/Silfenstudio"
+      ><img src="../images/face.png"
+    /></a>
+    <a href="https://www.youtube.com/channel/UCwUsHwkGR4253v1iySaJJZw"
+      ><img src="../images/youtube.png"
+    /></a>
+  </section>
+
+  <section id="help_footer">
+    <ul>
+      <li>
+        <a href="#"><b>HELP</b></a>
+      </li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Returns</a></li>
+      <li><a href="#">Shipping</a></li>
+      <li><a href="#">Payment</a></li>
+    </ul>
+  </section>
+
+  <section id="footerLinks">
+    <a href="help.html">HELP</a>
+    <a href="company.html">COMPANY</a>
+    <a href="terms.html">TERMS</a>
+  </section>
+</footer>
 
 <script src="shoppingflowJS.js"></script>
+<script src="../script.js"></script>
   </body>
 </html>
