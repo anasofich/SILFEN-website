@@ -4,12 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="styling.css" />
 
     <title>SILFEN</title>
   </head>
   <body>
+    <div id="menuLeft">
+      <section id="toogleMenu">
+        <a href="index.html"
+          ><img src="images/silfen_logo.png" alt="silfen_logo"
+        /></a>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <a href="index.html"
+          ><img src="images/play_logo.png" alt="play_logo"
+        /></a>
+      </section>
+    </div>
+
+    <div id="toggleIcon" onclick="menuToggle()"><p>Menu</p></div>
+    <div id="menu-overlay">
+      <ul id="menu">
+        <li>
+          <a href="#"><b>SHOP</b></a>
+        </li>
+        <li><a href="#">All Products</a></li>
+        <li><a href="#">New Products</a></li>
+        <li><a href="#">Sale</a></li>
+        <li><a href="#">Most popular</a></li>
+        <li><a href="#">Collections</a></li>
+        <br />
+        <li>
+          <a href="#"><b>ABOUT</b></a>
+        </li>
+        <li><a href="#">About Silfen</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
     <main>
       <div class="productView">
         <div class="product-pic">
@@ -86,16 +123,34 @@
           <button class="addCart2 hidden">ADD TO CART</button>
         </div>
       </div>
-
+      <!-- <template id="recCam">
+        <article class="camRec">
+          <img
+            class="cameraimg"
+            src="https://web35mm-e688.restdb.io/media/60317f169fc7b60c00000fe8?s=w"
+            alt="Camera"
+          />
+          <h3 class="cameraName">NIKON FM2</h3>
+          <p class="format">35mm</p>
+          <p class="level">Beginner</p>
+          <a href="camera-view.html?_id=602fb277b0bc995a00059a9">Read More</a>
+        </article>
+      </template>
+      <section class="recommended">
+        <h2>CHECK OTHER CAMERAS</h2>
+        <section class="recCam"></section>
+      </section> -->
+      <template id="recBags">
+        <div class="bagOne">
+          <img src="photos/alexandra.jpg" />
+          <h1 class="p"><b>ALEXANDRA</b></h1>
+          <h1 class="price">500 DKK</h1>
+        </div>
+      </template>
       <h1 class="similar">SEE SIMILAR PRODUCTS</h1>
       <section id="suggestions">
-        <div class="bagOne">
-          <img src="photos/alexandra.jpg" />
-          <p class="p"><b>ALEXANDRA</b></p>
-          <p class="p">500 DKK</p>
-        </div>
-
-        <div class="bagOne">
+        <section class="recProducts"></section>
+        <!-- <div class="bagOne">
           <img src="photos/alexandra.jpg" />
           <p class="p"><b>ALEXANDRA</b></p>
           <p class="p">500 DKK</p>
@@ -110,7 +165,7 @@
           <img src="photos/alexandra.jpg" />
           <p class="p"><b>ALEXANDRA</b></p>
           <p class="p">500 DKK</p>
-        </div>
+        </div> -->
       </section>
     </main>
   </body>
