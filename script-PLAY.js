@@ -1,5 +1,6 @@
 document.addEventListener("click", (x) => 0);
 
+document.getElementById("checkbox").checked = true;
 
 /*MENU*/
 function menuToggle() {
@@ -37,31 +38,34 @@ function uncheck() {
 
 // 1 OPTION - Switch settings for Silfen brand
 
-function checkSwitchAndGoToSilfenPlay() {
-  check();
-  console.log("HERE")
-  window.location.href = "./silfenplay.html";
-}
+// function checkSwitchAndGoToSilfenPlay() {
+//   check();
+//   console.log("HERE")
+//   window.location.href = "./silfenplay.html";
+// }
 
-function EventListenerSwitchFromSilfen() {
-  switchButton = document.querySelector("label.switch");
-  switchButton.addEventListener("click", checkSwitchAndGoToSilfenPlay);
-}
+// function EventListenerSwitchFromSilfen() {
+//   switchButton = document.querySelector("label.switch");
+//   switchButton.addEventListener("click", checkSwitchAndGoToSilfenPlay);
+// }
 
-uncheck();
-EventListenerSwitchFromSilfen();
+// uncheck();
+// EventListenerSwitchFromSilfen();
+
+
+
 
 // 2 OPTION - Switch settings for Silfen PLAY brand
 
-//   function checkSwitchAndGoToSilfen() {
-//     uncheck()
-//     window.location.href = './index.html';
-//   }
+  function checkSwitchAndGoToSilfen() {
+    uncheck()
+    window.location.href = './index.html';
+  }
 
-//   function EventListenerSwitchFromPLAY() {
-//     switchButton = document.querySelector("label.switch")
-//     switchButton.addEventListener("click", checkSwitchAndGoToSilfen);
-//   }
+  function EventListenerSwitchFromPLAY() {
+    switchButton = document.querySelector("label.switch")
+    switchButton.addEventListener("click", checkSwitchAndGoToSilfen);
+  }
 
-// check()
-// EventListenerSwitchFromPLAY()
+check()
+EventListenerSwitchFromPLAY()
