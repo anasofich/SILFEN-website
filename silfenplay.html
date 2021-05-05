@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>SILFEN STUDIO</title>
+    <link rel="stylesheet" href="playstyle.css" />
+    <link rel="shortcut icon" type="image/png" href="images/sortlogo.png" />
+  </head>
+
+  <body>
+    <div id="menuLeft">
+      <section id="toogleMenu">
+        <a href="index.html"
+          ><img src="images/silfen_logo.png" alt="silfen_logo"
+        /></a>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <a href="index.html"
+          ><img src="images/play_logo.png" alt="play_logo"
+        /></a>
+      </section>
+
+      <section id="menu_with_logo">
+        <div id="shopToggleIcon" onclick="shopMenuToggle()"><p>SHOP</p></div>
+        <div id="shop-menu-overlay">
+          <ul id="shop-menu">
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                >All Products</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                >New Products</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html">Sale</a>
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                >Most popular</a
+              >
+            </li>
+            <li>
+              <a href="../collectionsPages/collectionsMain.html">Collections</a>
+            </li>
+          </ul>
+
+          <ul id="shop-menu2">
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="photos/kim-recycled-pink.jpeg" /><br />Bumbags &
+                Crossbody bags</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="photos/ulrikka-recycled-blue.jpeg" /><br />Shoulder
+                bags</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="photos/yasmin-recycled-blue.jpeg" /><br />Mini
+                bags</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="photos/chillie-blue.jpg" /><br />Tote bags</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="photos/ida-leather-black.jpeg" /><br />Wallets</a
+              >
+            </li>
+            <li>
+              <a href="../all_products_site/all_products_site.html"
+                ><img src="photos/protection-spray.png" />Care</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <img
+          class="silfenPlayLogo"
+          src="images/play_logo.png"
+          width="30%"
+          alt="logo"
+        />
+
+        <div id="aboutToggleIcon" onclick="aboutMenuToggle()"><p>ABOUT</p></div>
+        <div id="about-menu-overlay">
+          <ul id="about-menu">
+            <li><a href="#">About Silfen</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="menubar">
+        <li>
+          <a href="#"><img src="images/search.png" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="images/lp_wishlist.svg" /></a>
+        </li>
+        <li>
+          <a href="shopping-bag.html"><img src="images/shopping_cart.svg" /></a>
+        </li>
+      </section>
+    </div>
+
+    <div id="toggleIcon" onclick="menuToggle()"><p>Menu</p></div>
+    <div id="menu-overlay">
+      <ul id="menu">
+        <li>
+          <a href="../all_products_site/all_products_site.html"><b>SHOP</b></a>
+        </li>
+        <li>
+          <a href="../all_products_site/all_products_site.html">All Products</a>
+        </li>
+        <li>
+          <a href="../all_products_site/all_products_site.html">New Products</a>
+        </li>
+        <li><a href="../all_products_site/all_products_site.html">Sale</a></li>
+        <li>
+          <a href="../all_products_site/all_products_site.html">Most popular</a>
+        </li>
+        <li>
+          <a href="../collectionsPages/collectionsMain.html">Collections</a>
+        </li>
+        <br />
+        <li>
+          <a href="#"><b>ABOUT</b></a>
+        </li>
+        <li><a href="#">About Silfen</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <section id="grid">
+      <section id="silfenSplit">
+        <img src="images/silfen_header.png" alt="silfenHeader" />
+        <button class="shopS">Shop SILFEN</button>
+      </section>
+
+      <section id="playSplit">
+        <img src="images/play_header.png" alt="playHeader" />
+        <button class="shopP">Shop PLAY</button>
+      </section>
+
+      <section id="newArrivals">
+        <img src="images/new_arrivals.png" alt="bag" />
+        <button class="shopNA">SHOP NEW ARRIVALS</button>
+      </section>
+
+      <section id="sustainability">
+        <img src="images/sus_photo.png" alt="Sustainability" />
+        <p>
+          With SILFEN we want to create a <b>GREENER FUTURE.</b> We always
+          strive to deliver high quality products in more sustainable materials.
+        </p>
+        <button class="readMore">READ MORE</button>
+      </section>
+    </section>
+
+    <section id="bestsellers">
+      <h1>MOST POPULAR</h1>
+      <div id="mobile">
+        <img src="photos/yasmin-recycled-blue.jpeg" />
+      </div>
+      <div id="desktop"><img src="images/bestsellers.png" /></div>
+      <p>YASMIN RECYCLED <br />300 DKK</p>
+      <button class="seeMore">SEE MORE</button>
+    </section>
+
+    <section id="somePost">
+      <h1>We've been waiting for you</h1>
+      <h2>
+        SHARE YOUR PICTURE USING <br />
+        #SILFENVIBES
+      </h2>
+      <div id="spMobile">
+        <img src="images/some_pics.png" alt="some pics" />
+      </div>
+      <div id="spDesktop">
+        <img src="images/some.png" alt="some pics" />
+      </div>
+      <p>@SILFENSTUDIO</p>
+      <button class="instaButton">CHECK OUT OUR PROFILE</button>
+    </section>
+
+    <div class="navbar">
+      <li>
+        <a href="#"><img src="images/search.png" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="images/lp_wishlist.svg" /></a>
+      </li>
+      <li>
+        <a href="shopping-bag.html"><img src="images/shopping_cart.svg" /></a>
+      </li>
+    </div>
+
+    <footer>
+      <section id="newsletter">
+        <p>
+          Sign up to our newsletter and <b>GET -10% OFF</b> your first order
+        </p>
+        <div class="input-group">
+          <label for="email"></label>
+          <input
+            type="text"
+            placeholder="Write your email here"
+            class="form-control"
+          />
+        </div>
+        <button class="signUp">SIGN ME UP</button>
+      </section>
+
+      <section id="terms_footer">
+        <ul>
+          <li>
+            <a href="#"><b>TERMS</b></a>
+          </li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </section>
+
+      <section id="company_footer">
+        <ul>
+          <li>
+            <a href="#"><b>COMPANY</b></a>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </section>
+
+      <section id="footerSome">
+        <a href="https://www.instagram.com/silfenstudio/"
+          ><img src="images/insta.png"
+        /></a>
+        <a href="https://www.facebook.com/Silfenstudio"
+          ><img src="images/face.png"
+        /></a>
+        <a href="https://www.youtube.com/channel/UCwUsHwkGR4253v1iySaJJZw"
+          ><img src="images/youtube.png"
+        /></a>
+      </section>
+
+      <section id="help_footer">
+        <ul>
+          <li>
+            <a href="#"><b>HELP</b></a>
+          </li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Payment</a></li>
+        </ul>
+      </section>
+
+      <section id="footerLinks">
+        <a href="help.html">HELP</a>
+        <a href="company.html">COMPANY</a>
+        <a href="terms.html">TERMS</a>
+      </section>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
