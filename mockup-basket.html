@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="basket-css.css" />
+
+    <title>SILFEN</title>
+  </head>
+  <body>
+    <h2 class="similar">YOUR BASKET</h2>
+
+    <section id="shoppingbagDetails">
+      <div class="shoppingBagTitle">
+      </div>
+
+      <template id="cartItems">
+        <div class="orderItem">
+          <div class="bagproductImg">
+            <img
+              src="https://anasofich.github.io/SILFEN-website/photos/bibbi-nylon-blue.jpg"
+            />
+          </div>
+          <div class="bagproductInfo">
+            <h3 class="bagName">Bibbi Nylon</h3>
+            <p>Color: <span class="bagColor">light blue</span></p>
+            <p>Quantity: <span class="bagQuantity">2</span></p>
+            <p class="bagproductPrice">1200 DKK</p>
+            <div class="lineS"></div>
+          </div>
+      </template>
+
+<template id="cartTemplate">
+    <div class="orderItem">
+        <div class="bagproductImg">
+            <img
+              src="https://anasofich.github.io/SILFEN-website/photos/bibbi-nylon-blue.jpg"
+            />
+          </div>
+          <div class="bagproductInfo">
+            <label for="ID"><h3 class="bagName">Bibbi Nylon</h3></label>
+            <input type="number" id="ID" min="0" max="20">
+            
+            <p>Color: <span class="bagColor">light blue</span></p>
+            <p>Quantity: <span class="bagQuantity">2</span></p>
+            <p class="bagproductPrice">1200 DKK</p>
+            <div class="lineS"></div>
+          </div>
+
+    </div>
+
+</template>
+
+<div class="mockupBag">
+    <form action="">
+        <h2>THE CART IS EMPTY</h2>
+        <div class="orderItem">
+            <div class="bagproductImg">
+                <img
+                  src="https://anasofich.github.io/SILFEN-website/photos/bibbi-nylon-blue.jpg"
+                />
+              </div>
+              <div class="bagproductInfo">
+                <label for="ID"><h3 class="bagName">Bibbi Nylon</h3></label>
+                <input type="number" id="ID" min="0" max="20">
+                
+                <p>Color: <span class="bagColor">light blue</span></p>
+                <p>Quantity: <span class="bagQuantity">2</span></p>
+                <p class="bagproductPrice">1200 DKK</p>
+                <div class="lineS"></div>
+              </div>
+
+        </div>
+
+    </form>
+</div>
+
+      <div class="orderSummary">
+          <div class="items">
+        
+        </div>
+          
+        </div>
+        <div class="lineL"></div>
+
+        <div class="orderPrice">
+            <div class="priceText">
+              <p>Order value</p>
+              <p>Delivery</p>
+              <p class="subtotal">Subtotal</p>
+            </div>
+            <div class="priceAmount">
+              <p class="orderValue">1800 DKK</p>
+              <p class="delivery">FREE</p>
+              <p class="subtotal">1800 DKK</p>
+            </div>
+          </div>
+    </div>
+
+<div class="itemsTwo">
+        <h1 class="shoppingBag">SHOPPING BAG TOTAL</h1>
+        <div class="orderPrice">
+          <div class="priceText">
+            <p>Order value</p>
+            <p>Delivery</p>
+          </div>
+          <div class="priceAmount">
+            <p class="orderValue">1800 DKK</p>
+            <p class="delivery">FREE</p>
+          </div>
+        </div>
+        <div class="couponDiv">
+          <input type="text" name="coupon" placeholder="COUPON CODE" />
+          <button>Apply coupon</button>
+        </div>
+        <div class="lineL"></div>
+        <div class="subtotalFinal">
+          <p class="subtotal">SUBTOTAL</p>
+          <p class="subtotal">1800 DKK</p>
+        </div>
+        <div class="buttons">
+            <a href="#"><button class="proceed b">PROCEED TO CHECKOUT</button></a>
+            <a href="#"><button class="continue b">CONTINUE SHOPPING</button></a>
+        </div>
+    </div>
+    </section>
+
+    <h1 class="similar">SEE SIMILAR PRODUCTS</h1>
+<section id="suggestions">
+    <div class="bagOne">
+        <img src="photos/alexandra.jpg">
+        <p class="p"><b>ALEXANDRA</b></p>
+        <p class="p">500 DKK</p>
+    </div>
+
+    <div class="bagOne">
+        <img src="photos/alexandra.jpg">
+        <p class="p"><b>ALEXANDRA</b></p>
+        <p class="p">500 DKK</p>
+       
+    </div>  
+    <div class="bagOne">
+        <img src="photos/alexandra.jpg">
+        <p class="p"><b>ALEXANDRA</b></p>
+        <p class="p">500 DKK</p>
+       
+    </div>
+
+    <div class="bagOne">
+        <img src="photos/alexandra.jpg">
+        <p class="p"><b>ALEXANDRA</b></p>
+        <p class="p">500 DKK</p>
+       
+    </div>
+    </div>
+</section>
+  </body>
+  <script src="script.js"></script>
+<script src="basket-js.js"></script>
+</html>
