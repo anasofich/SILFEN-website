@@ -175,6 +175,7 @@ a.selected_type {
     overflow-x: auto;
     align-items: flex-start;
     justify-content: space-around;
+    padding-top:2%;
 }
 
 .filter-bags-sprite {
