@@ -40,6 +40,10 @@ h1 {
   padding: 0;
 }
 
+.lineOne{
+  margin-top: 10%;
+}
+
 .nameBag,
 .priceBag {
   margin: 0.5rem;
@@ -211,6 +215,7 @@ li {
   width: 100%;
   white-space: nowrap;
   overflow-x: auto;
+  margin-bottom: 5%;
 }
 
 .bagOne img {
@@ -338,10 +343,6 @@ li {
   .dropdown > .dropdownList:hover .list2 {
     /* transform: scaleY(1); */
     height: 140px;
-  }
-
-  p {
-    display: none;
   }
 
   .bagDesc {
