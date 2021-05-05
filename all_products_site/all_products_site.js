@@ -20,41 +20,124 @@
 
 
 
-// const url = "https://kea-alt-del.dk/t7/api/products?limit=100";
+// ================================ global data ================================
 
 
 
-//adding the source from where we fetch data
+let current_filters = {
+    bag_types: "VIEWALL",
+    sales: false,
+    newarr: false,
+    collections: [],
+    materials: [],
+}
 
-// const url = "https://kea-alt-del.dk/t7/api/products?category=" + category; 
-const url = "https://kea2021-907c.restdb.io/rest/bags?"
-const header = {
+
+
+// ================================ load data function ================================
+
+
+
+function fetchAll() {
+    const url = "https://kea2021-907c.restdb.io/rest/bags?"
+    const header = {
+        "method": "GET",
+        "headers": {
+            "x-apikey": "602e264f5ad3610fb5bb6267",
+            "Content-Type": "application/json"
+            }
+        }
+
+    fetch(url, header)
+        .then((res) => res.json())
+        .then(response => {
+            // console.log(response)
+            console.log("reset1")
+            resetProducts()
+            response.forEach(product => {
+                showProduct(product)
+            })
+            setup_wishlist_listener()
+        })
+        .catch(err => {
+            console.error(err)
+        })
+
+}
+
+function load_data_sales_or_newarr() {
+    const header = {
+        "method": "GET",
+        "headers": {
+            "x-apikey": "602e264f5ad3610fb5bb6267",
+            "Content-Type": "application/json"
+            }
+    }
+    let url = ''
+    if (current_filters.sales == true && current_filters.newarr == true) {
+        url = `https://kea2021-907c.restdb.io/rest/bags?q={"sale": true, "newProducts": true}`
+    }
+    else if (current_filters.sales == true) {
+        // current_filters.newarr == false
+        // document.querySelector(".filter-new_arrivals").children[0].children[0].src = "../images/icon-unselected_filtering_element.svg"
+        url = `https://kea2021-907c.restdb.io/rest/bags?q={"sale": true}`
+    }
+    else if (current_filters.newarr == true) {
+        // current_filters.sales == false
+        // document.querySelector(".filter-sale").children[0].children[0].src = "../images/icon-unselected_filtering_element.svg"
+        url = `https://kea2021-907c.restdb.io/rest/bags?q={"newProducts": true}`
+    }
+    else {
+        url = `https://kea2021-907c.restdb.io/rest/bags?`
+    }
+    fetch(url, header)
+        .then((res) => res.json())
+        .then(response => {
+            // console.log(response)
+            resetProducts()
+            response.forEach(product => {
+                showProduct(product, url)
+            })
+            setup_wishlist_listener()
+        })
+        .catch(err => {
+            console.error(err)
+        })
+}
+
+function load_data_bag_type() {
+    const url = `https://kea2021-907c.restdb.io/rest/bags?q={"typeOfTheBag":"${current_filters.bag_types}"}`
+    const header = {
     "method": "GET",
     "headers": {
         "x-apikey": "602e264f5ad3610fb5bb6267",
         "Content-Type": "application/json"
-    }
-}
-console.log(url)
+        }
+    }   
 
-
-fetch(url, header)
-    .then((res) => res.json())
-    .then(response => {
-        console.log(response)
-        response.forEach(product => {
-            showProduct(product)
+    fetch(url, header)
+        .then((res) => res.json())
+        .then(response => {
+            console.log("reset4")
+            resetProducts()
+            response.forEach(product => {
+                showProduct(product, url)
+            })
+            setup_wishlist_listener()
         })
-    })
-    .catch(err => {
-        console.error(err);
-    });
+        .catch(err => {
+            console.error(err);
+        });
+}
 
 
-function showProduct(data){
+// ================================ show products from data ================================
+
+
+function showProduct(data, url){
     //grab the template
     const product_template = document.querySelector("template.product-template").content
-    console.log(product_template)
+    // console.log(product_template)
 
     //clone it
     const myCopy = product_template.cloneNode(true);
@@ -62,12 +145,50 @@ function showProduct(data){
 
     myCopy.querySelector("h3.product-name").textContent = data.name
     myCopy.querySelector("img.product-image").alt = data.name
-
     myCopy.querySelector("img.product-image").src = data.photo
 
-    //  myCopy.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+    //setting colour of circles under images
+    setCirclesForProducts(data, myCopy)
+        
+
+     //changing content when sale, sold out etc
+
+     if (data.sale == true) {
+        myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
+        myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
+    } else {
+        myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
+    }
+    // const aEl = myCopy.querySelector("a");
+    // aEl.href = "product.html?id=" + url_id;
+
+    //grab parent
+    const parent = document.querySelector("#product_list")
+    // console.log(parent)
+
+    //append
+    parent.appendChild(myCopy)
+}
+
+function resetProducts() {
+    container_product_list = document.querySelector("#product_list")
+    let products = [...container_product_list.children]
+    
+    // removes first element from the array (in this case template article)
+    products = products.slice(1)
+    
+    products.forEach((product) => {
+        product.remove()
+    })
+}
 
 
+
+// ================================ helper function (other usage) ================================
+
+
+
+function setCirclesForProducts(data, myCopy){
     // setting circle colour under product image
 
     if (data.colour == "Beige"){
@@ -97,55 +218,13 @@ function showProduct(data){
     if (data.colour == "Yellow"){
         myCopy.querySelector("p.product-circle_color").style.backgroundColor = "#ffee00";
     }
-
-
-
-
-
-
-
-    //changing content when sale, sold out etc
-
-    if (url.sale == true) {
-        myCopy.querySelector("h4.product-sale_price").textContent = data.salePrice + " DKK"
-        myCopy.querySelector("h4.product-price").textContent = data.price + " DKK"
-    } else {
-        myCopy.querySelector("h4.product-sale_price").textContent = data.price + " DKK"
-    }
-    // const aEl = myCopy.querySelector("a");
-    // aEl.href = "product.html?id=" + url_id;
-
-    //grab parent
-    const parent = document.querySelector("#product_list")
-    console.log(parent)
-    //append
-    parent.appendChild(myCopy)
-
 }
 
 
 
+// ================================ event listener functions ================================
 
 
-
-// global data
-
-let current_filters = {
-    bag_types: "VIEW ALL",
-    sales: false,
-    newarr: false,
-    collections: [],
-    materials: [],
-}
-
-// load data function
-
-function load_data() {
-    console.log('loading_data...')
-}
-
-
-// helper function (other usage)
 
 function toggle_click(button) {
     // changes only the visual style nothing else
@@ -159,8 +238,8 @@ function toggle_click(button) {
 
 function toggle_click_hearts(product) {
     // changes only the visual style of hearts on click nothing else
-    
-    let heart_icon = product.children[0].children[1]
+    let heart_icon = product.children[1].children[0]
+
     if (heart_icon.classList.contains("wishlist-on-product") == true) {
         heart_icon.classList.remove("wishlist-on-product")
         heart_icon.classList.add("wishlist-on-product-clicked")
@@ -171,29 +250,25 @@ function toggle_click_hearts(product) {
     }
 }
 
-// event listener functions
-
 function click_bag_type(clicked_type, all_bag_types) {
     // add class selection on div
     all_bag_types.forEach((type) => {
         type.classList.remove("selected_type")
     })
     clicked_type.classList.add("selected_type")
+
     // add selected bag type name to filtering
-    current_filters.bag_types = clicked_type.getElementsByClassName("text-bag_type")[0].textContent
 
-    load_data()
+    clicked_type = clicked_type.getElementsByClassName("text-bag_type")[0].textContent
+    current_filters.bag_types = clicked_type.replace(/ /g, '')
+
+    if (current_filters.bag_types == "VIEWALL") {
+        fetchAll()
+    }
+    else {
+        load_data_bag_type()
+    }
 }
-
-function setup_wishlist_listener(container_product_list) {
-    // let products = container_product_list.children
-    let products = [...container_product_list.children]
-    products.forEach((product) => {
-        product.addEventListener(
-            "click", toggle_click_hearts.bind(null, product))
-    })
-}
-
 
 function click_sales_filter(sales_button) {
     toggle_click(sales_button)
@@ -203,7 +278,7 @@ function click_sales_filter(sales_button) {
         current_filters.sales = true
     }
 
-    load_data()
+    load_data_sales_or_newarr()
 }
 
 function click_newarr_filter(newarr_button) {
@@ -214,7 +289,7 @@ function click_newarr_filter(newarr_button) {
         current_filters.newarr = true
     }
 
-    load_data()
+    load_data_sales_or_newarr()
 }
 
 function click_collection_filter(collection_button) {
@@ -247,7 +322,20 @@ function click_material_filter(material_button) {
     load_data()
 }
 
-// setup functions (run only once)
+
+
+// ================================ setup functions (run only once) ================================
+
+
+
+function setup_wishlist_listener() {
+    const container_product_list = document.querySelector("#product_list")
+    products = [...container_product_list.children]
+
+    products.forEach(item => {
+        item.addEventListener('click', toggle_click_hearts.bind(null, item))
+    })
+}
 
 function setup_bag_types_listener(container_type_of_bags) {
     // hack! change HTMLCollection to list (forEach does not work on HTMLCollections...)
@@ -311,11 +399,16 @@ function setup_filter_sort_panel(container_filters, container_sorting, filter_bu
         'click', click_select_sorting.bind(null, container_filters, container_sorting, filter_button, sort_button))
 }
 
+
+
+// ============================ MAIN ===========================
+
+
+
 function main() {
     const container_type_of_bags = document.getElementById("filter-type_of_bag")
     const container_filters = document.getElementById("filter_by")
     const container_sorting = document.getElementById("sort_by")
-    const container_product_list = document.getElementById("product_list")
     const filter_button = document.getElementById("select_filtering")
     const sort_button = document.getElementById("select_sorting")
   
@@ -323,9 +416,8 @@ function main() {
     setup_filter_sort_panel(container_filters, container_sorting, filter_button, sort_button)
     setup_bag_types_listener(container_type_of_bags)
     setup_filters_listener(container_filters)
-    setup_wishlist_listener(container_product_list)
 
-    load_data()
+    fetchAll()
 }
 
 main()
