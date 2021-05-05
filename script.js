@@ -1,6 +1,8 @@
 
 document.addEventListener("click", (x) => 0);
 
+
+
 /*MENU*/
 function menuToggle() {
   var nav = document.getElementById("menu-overlay");
@@ -8,6 +10,9 @@ function menuToggle() {
   var nav = document.getElementById("toggleIcon");
   nav.classList.toggle("active");
 }
+
+
+
   /*SHOPMENU*/
 function shopMenuToggle() {
   var nav = document.getElementById("shop-menu-overlay");
@@ -25,3 +30,49 @@ function shopMenuToggle() {
     nav.classList.toggle("active");
   
   }
+
+
+  /*SWITCH button functions*/
+
+  function check() {
+    document.getElementById("checkbox").checked = true;
+  }
+
+  function uncheck() {
+    document.getElementById("checkbox").checked = false;
+  }
+
+
+
+// 1 OPTION - Switch settings for Silfen brand
+
+  function checkSwitchAndGoToSilfenPlay() {
+    check()
+    window.location.href = 'https://www.google.com/';
+  }
+
+  function EventListenerSwitchFromSilfen() {
+    switchButton = document.querySelector("label.switch")
+    switchButton.addEventListener("click", checkSwitchAndGoToSilfenPlay);
+  }
+
+uncheck()
+EventListenerSwitchFromSilfen()
+  
+
+
+// 2 OPTION - Switch settings for Silfen PLAY brand
+
+//   function checkSwitchAndGoToSilfen() {
+//     uncheck()
+//     window.location.href = './index.html';
+//   }
+
+//   function EventListenerSwitchFromPLAY() {
+//     switchButton = document.querySelector("label.switch")
+//     switchButton.addEventListener("click", checkSwitchAndGoToSilfen);
+//   }
+
+// check()
+// EventListenerSwitchFromPLAY()
+
