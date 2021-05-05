@@ -216,6 +216,10 @@ input:checked + .slider:before {
   opacity: 50%;
 }
 
+#menu_with_logo, #menubar{
+  display:none;
+}
+
 /*SILFEN/PLAY SPLIT HEADER*/
 #silfenSplit img {
   width: 100%;
@@ -555,6 +559,190 @@ footer {
 }
 
 @media only screen and (min-width: 800px) {
+
+  #toogleMenu{
+    z-index: 3;
+  }
+
+/*SHOPMENU*/
+
+#shop-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  overflow-y: auto;
+  transform: scale(0);
+  transition: 0.5s;
+  z-index: 2;
+}
+
+#shop-menu-overlay.active {
+  transform: scale(1);
+}
+
+#shop-menu-overlay ul {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+#shop-menu-overlay ul li {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  display: block;
+}
+
+#shop-menu-overlay ul li a {
+  text-decoration: none;
+  position: relative;
+  font-size:0.9em;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  color: #000;
+  display: inline-block;
+}
+
+#shop-menu-overlay ul li a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #000;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: right;
+  transition: 0.5s transform;
+}
+
+#shop-menu-overlay ul li a:hover {
+  opacity: 50%;
+}
+
+#shopToggleIcon {
+  position: fixed;
+  cursor: pointer;
+  left: 35%;
+  top:1%;
+  z-index: 4;
+}
+
+#shopToggleIcon p {
+  color: #000;
+  font-size: 1.3em;
+  font-weight: 100;
+  padding: 0;
+  margin: 0;
+  margin-top: 13%;
+}
+
+#shopToggleIcon p:hover {
+  opacity: 50%;
+}
+
+#shop-menu2{
+display: grid;
+grid-template-columns: 25% 25% 25%;
+
+}
+
+#shop-menu2 img{
+width:100%;
+text-align: center;
+}
+
+
+/*aboutmenu*/
+#about-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  justify-content: center;
+  overflow-y: auto;
+  transform: scale(0);
+  transition: 0.5s;
+  z-index: 2;
+}
+
+#about-menu-overlay.active {
+  transform: scale(1);
+}
+
+#about-menu-overlay ul {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  margin-top: 10%;
+}
+
+#about-menu-overlay ul li {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  display: block;
+}
+
+#about-menu-overlay ul li a {
+  text-decoration: none;
+  position: relative;
+  font-size:0.9em;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  color: #000;
+  display: inline-block;
+}
+
+#about-menu-overlay ul li a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #000;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: right;
+  transition: 0.5s transform;
+}
+
+#about-menu-overlay ul li a:hover {
+  opacity: 50%;
+}
+
+#aboutToggleIcon {
+  position: fixed;
+  cursor: pointer;
+  left: 60%;
+  top:0.8%;
+  z-index: 4;
+}
+
+#aboutToggleIcon p {
+  color: #000;
+  font-size: 1.3em;
+  font-weight: 100;
+  padding: 0;
+  margin: 0;
+  margin-top: 13%;
+}
+
+#aboutToggleIcon p:hover {
+  opacity: 50%;
+}
+
   /*menu*/
   #menu-overlay,
   #toggleIcon {
@@ -568,7 +756,7 @@ footer {
 
   #menu_with_logo,
   #menubar {
-    z-index: 1;
+    z-index: 3;
     display: flex;
     list-style: none;
     justify-content: center;
@@ -581,11 +769,11 @@ footer {
   }
 
   #menu_with_logo img {
-    width: 15%;
     height: 100%;
     margin-right: 4%;
     margin-left: 4%;
     margin-top: 2%;
+    z-index: 4;
   }
 
   #menu_with_logo li a {

@@ -26,11 +26,63 @@
       </section>
 
       <section id="menu_with_logo">
-        <li><a href="#">SHOP</a></li>
-        <img src="images/silfen_logo.png" alt="logo">
-        <li><a href="#">ABOUT</a></li>
+        <div id="shopToggleIcon" onclick="shopMenuToggle()"><p>SHOP</p></div>
+        <div id="shop-menu-overlay">
+          <ul id="shop-menu">
+            <li><a href="#">All Products</a></li>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Most popular</a></li>
+            <li><a href="#">Collections</a></li>
+          </ul>
+
+          <ul id="shop-menu2">
+            <li>
+              <a href="#"
+                ><img src="photos/kim-recycled-pink.jpeg" /><br />Bumbags &
+                Crossbody bags</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="photos/ulrikka-recycled-blue.jpeg" /><br />Shoulder
+                bags</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="photos/yasmin-recycled-blue.jpeg" /><br />Mini
+                bags</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="photos/chillie-blue.jpg" /><br />Tote bags</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="photos/ida-leather-black.jpeg" /><br />Wallets</a
+              >
+            </li>
+            <li>
+              <a href="#"><img src="photos/protection-spray.png" />Care</a>
+            </li>
+          </ul>
+        </div>
+
+        <img src="images/silfen_logo.png" width="15%" alt="logo" />
+
+        <div id="aboutToggleIcon" onclick="aboutMenuToggle()"><p>ABOUT</p></div>
+        <div id="about-menu-overlay">
+          <ul id="about-menu">
+            <li><a href="#">About Silfen</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
       </section>
-      
+
       <section id="menubar">
         <li>
           <a href="#"><img src="images/search.png" /></a>
@@ -42,7 +94,6 @@
           <a href="shopping-bag.html"><img src="images/shopping_cart.svg" /></a>
         </li>
       </section>
-
     </div>
 
     <div id="toggleIcon" onclick="menuToggle()"><p>Menu</p></div>
@@ -65,7 +116,6 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
-
 
     <section id="grid">
       <section id="silfenSplit">
