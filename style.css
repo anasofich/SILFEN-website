@@ -848,6 +848,57 @@ footer {
     display: none;
   }
 
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+
+  .overlayS {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+
+  #playSplit:hover .overlay,
+  #silfenSplit:hover .overlayS {
+    opacity: 1;
+  }
+
+  #playSplit:hover,
+  #silfenSplit:hover {
+    opacity: 65%;
+  }
+
+  .text,
+  .textS {
+    color: #000;
+    font-size: 3.5rem;
+    position: absolute;
+    font-family: var(--font-1);
+    font-weight: 500;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .textS{
+    color: #fff;
+  }
+
   /*NEW ARRIVALS*/
 
   #newArrivals img {
