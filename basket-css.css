@@ -251,11 +251,20 @@ h1 {
 .bagOne {
   width: 10em;
 }
+
 .p {
   font-family: var(--font-1);
   padding: 0;
   margin: 0;
   text-align: center;
+  font-size: 0.9rem;
+}
+
+.price {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 200;
+  margin: 0;
 }
 
 .proceed {
@@ -314,8 +323,9 @@ a {
   }
 
   .bagOne {
-    width: 15rem;
+    width: 20em;
   }
+
   .similar {
     font-size: 2rem;
   }
@@ -344,5 +354,13 @@ a {
   .bagColor,
   .bagQuantity {
     font-size: 0.9rem;
+  }
+
+  .price {
+    text-align: center;
+    justify-content: center;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
   }
 }
