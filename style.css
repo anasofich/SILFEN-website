@@ -607,6 +607,9 @@ footer {
     margin-bottom: 10px;
     color: #000;
     display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #shop-menu-overlay ul li a:before {
