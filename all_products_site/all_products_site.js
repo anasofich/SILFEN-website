@@ -57,7 +57,7 @@ function fetchAll() {
             response.forEach(product => {
                 showProduct(product)
             })
-            setup_wishlist_listener()
+            // setup_wishlist_listener()
         })
         .catch(err => {
             console.error(err)
@@ -98,7 +98,7 @@ function load_data_sales_or_newarr() {
             response.forEach(product => {
                 showProduct(product, url)
             })
-            setup_wishlist_listener()
+            // setup_wishlist_listener()
         })
         .catch(err => {
             console.error(err)
@@ -123,7 +123,7 @@ function load_data_bag_type() {
             response.forEach(product => {
                 showProduct(product, url)
             })
-            setup_wishlist_listener()
+            // setup_wishlist_listener()
         })
         .catch(err => {
             console.error(err);
@@ -146,6 +146,9 @@ function showProduct(data, url){
     myCopy.querySelector("h3.product-name").textContent = data.name
     myCopy.querySelector("img.product-image").alt = data.name
     myCopy.querySelector("img.product-image").src = data.photo
+
+    myCopy.querySelector("#productlistLink").href = `../product-view.html?id=${data._id}`;
+
 
     //setting colour of circles under images
     setCirclesForProducts(data, myCopy)
