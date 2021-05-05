@@ -57,7 +57,7 @@ function fetchAll() {
             response.forEach(product => {
                 showProduct(product)
             })
-            // setup_wishlist_listener()
+            setup_wishlist_listener()
         })
         .catch(err => {
             console.error(err)
@@ -98,7 +98,7 @@ function load_data_sales_or_newarr() {
             response.forEach(product => {
                 showProduct(product, url)
             })
-            // setup_wishlist_listener()
+            setup_wishlist_listener()
         })
         .catch(err => {
             console.error(err)
@@ -123,7 +123,7 @@ function load_data_bag_type() {
             response.forEach(product => {
                 showProduct(product, url)
             })
-            // setup_wishlist_listener()
+            setup_wishlist_listener()
         })
         .catch(err => {
             console.error(err);
