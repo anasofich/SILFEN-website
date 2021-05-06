@@ -1,6 +1,5 @@
 document.addEventListener("click", (x) => 0);
 
-
 /*MENU*/
 function menuToggle() {
   var nav = document.getElementById("menu-overlay");
@@ -39,7 +38,7 @@ function uncheck() {
 
 function checkSwitchAndGoToSilfenPlay() {
   check();
-  console.log("HERE")
+  console.log("HERE");
   window.location.href = "./silfenplay.html";
 }
 

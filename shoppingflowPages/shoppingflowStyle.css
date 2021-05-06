@@ -317,7 +317,7 @@ form.paymentForm {
 }
 
 .placeOrder:hover {
-  transform: scale(1.1);
+  background-color: var(--color-3);
 }
 
 .placeOrder:active {
@@ -406,7 +406,7 @@ form.paymentForm {
 }
 
 .backtoShop button:hover {
-  transform: scale(1.1);
+  background-color: var(--color-3);
 }
 
 .backtoShop button:active {
