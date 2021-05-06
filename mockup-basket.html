@@ -40,11 +40,11 @@
             />
           </div>
           <div class="bagproductInfo">
-            <label for="ID"><h3 class="bagName">Bibbi Nylon</h3></label>
-            <input type="number" id="ID" min="0" max="20">
+            <label for="fid-"><h3 class="bagName">NAME</h3></label>
             
-            <p>Color: <span class="bagColor">light blue</span></p>
-            <p>Quantity: <span class="bagQuantity">2</span></p>
+            
+            <p>Color: <span class="bagColor"></span></p>
+            <p>Quantity: <span class="bagQuantity"><input name="NAME-" type="number" id="fid-" min="0" max="20"></span></p>
             <p class="bagproductPrice">1200 DKK</p>
             <div class="lineS"></div>
           </div>
@@ -53,39 +53,19 @@
 
 </template>
 
-<div class="mockupBag">
-    <form action="">
-        <h2>THE CART IS EMPTY</h2>
-        <div class="orderItem">
-            <div class="bagproductImg">
-                <img
-                  src="https://anasofich.github.io/SILFEN-website/photos/bibbi-nylon-blue.jpg"
-                />
-              </div>
-              <div class="bagproductInfo">
-                <label for="ID"><h3 class="bagName">Bibbi Nylon</h3></label>
-                <input type="number" id="ID" min="0" max="20">
-                
-                <p>Color: <span class="bagColor">light blue</span></p>
-                <p>Quantity: <span class="bagQuantity">2</span></p>
-                <p class="bagproductPrice">1200 DKK</p>
-                <div class="lineS"></div>
-              </div>
 
-        </div>
-
-    </form>
-</div>
 
       <div class="orderSummary">
           <div class="items">
-        
-        </div>
-          
-        </div>
-        <div class="lineL"></div>
-
-        <div class="orderPrice">
+            <div class="mockupBag">
+              <form action="">
+                <div class="cartContent">
+                  <h2>THE CART IS EMPTY</h2>
+                </div>
+              </form>
+          </div>
+          <div class="lineL"></div>
+          <div class="orderPrice">
             <div class="priceText">
               <p>Order value</p>
               <p>Delivery</p>
@@ -97,34 +77,36 @@
               <p class="subtotal">1800 DKK</p>
             </div>
           </div>
+        </div>
+        <div class="itemsTwo">
+          <h1 class="shoppingBag">SHOPPING BAG TOTAL</h1>
+          <div class="orderPrice">
+            <div class="priceText">
+              <p>Order value</p>
+              <p>Delivery</p>
+            </div>
+            <div class="priceAmount">
+              <p class="orderValue">1800 DKK</p>
+              <p class="delivery">FREE</p>
+            </div>
+          </div>
+          <div class="couponDiv">
+            <input type="text" name="coupon" placeholder="COUPON CODE" />
+            <button>Apply coupon</button>
+          </div>
+          <div class="lineL"></div>
+          <div class="subtotalFinal">
+            <p class="subtotal">SUBTOTAL</p>
+            <p class="subtotal">1800 DKK</p>
+          </div>
+          <div class="buttons">
+              <a href="#"><button class="proceed b">PROCEED TO CHECKOUT</button></a>
+              <a href="#"><button class="continue b">CONTINUE SHOPPING</button></a>
+          </div>
+      </div>
     </div>
 
-<div class="itemsTwo">
-        <h1 class="shoppingBag">SHOPPING BAG TOTAL</h1>
-        <div class="orderPrice">
-          <div class="priceText">
-            <p>Order value</p>
-            <p>Delivery</p>
-          </div>
-          <div class="priceAmount">
-            <p class="orderValue">1800 DKK</p>
-            <p class="delivery">FREE</p>
-          </div>
-        </div>
-        <div class="couponDiv">
-          <input type="text" name="coupon" placeholder="COUPON CODE" />
-          <button>Apply coupon</button>
-        </div>
-        <div class="lineL"></div>
-        <div class="subtotalFinal">
-          <p class="subtotal">SUBTOTAL</p>
-          <p class="subtotal">1800 DKK</p>
-        </div>
-        <div class="buttons">
-            <a href="#"><button class="proceed b">PROCEED TO CHECKOUT</button></a>
-            <a href="#"><button class="continue b">CONTINUE SHOPPING</button></a>
-        </div>
-    </div>
+
     </section>
 
     <h1 class="similar">SEE SIMILAR PRODUCTS</h1>
@@ -158,5 +140,5 @@
 </section>
   </body>
   <script src="script.js"></script>
-<script src="basket-js.js"></script>
+<script src="mockup-basket.js"></script>
 </html>
