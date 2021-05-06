@@ -17,7 +17,7 @@
           ><img src="images/silfen_logo.png" alt="silfen_logo"
         /></a>
         <label class="switch">
-          <input type="checkbox" id="checkbox"/>
+          <input type="checkbox" id="checkbox" />
           <span class="slider round"></span>
         </label>
         <a href="index.html"
@@ -89,7 +89,9 @@
           </ul>
         </div>
 
-        <a href="index.html"><img src="images/silfen_logo.png" width="20%" alt="logo" /></a>
+        <a href="index.html"
+          ><img src="images/silfen_logo.png" width="20%" alt="logo"
+        /></a>
 
         <div id="aboutToggleIcon" onclick="aboutMenuToggle()"><p>ABOUT</p></div>
         <div id="about-menu-overlay">
@@ -148,10 +150,9 @@
     <h2 class="similar">YOUR BASKET</h2>
 
     <section id="shoppingbagDetails">
-      <div class="shoppingBagTitle">
-      </div>
+      <div class="shoppingBagTitle"></div>
 
-      <template id="cartItems">
+      <template id="cartTemplate">
         <div class="orderItem">
           <div class="bagproductImg">
             <img
@@ -159,48 +160,32 @@
             />
           </div>
           <div class="bagproductInfo">
-            <h3 class="bagName">Bibbi Nylon</h3>
-            <p>Color: <span class="bagColor">light blue</span></p>
-            <p>Quantity: <span class="bagQuantity">2</span></p>
+            <label for="fid-"><h3 class="bagName">NAME</h3></label>
+
+            <p>Color: <span class="bagColor"></span></p>
+            <p>
+              Quantity:
+              <span class="bagQuantity"
+                ><input name="NAME-" type="number" id="fid-" min="0" max="20"
+              /></span>
+            </p>
             <p class="bagproductPrice">1200 DKK</p>
             <div class="lineS"></div>
           </div>
+        </div>
       </template>
+
       <div class="orderSummary">
-          <div class="items">
-        <!-- <div class="orderItem">
-          <div class="bagproductImg">
-            <img
-              src="https://anasofich.github.io/SILFEN-website/photos/bibbi-nylon-blue.jpg"
-            />
+        <div class="items">
+          <div class="mockupBag">
+            <form action="">
+              <div class="cartContent">
+                <h2>THE CART IS EMPTY</h2>
+              </div>
+            </form>
           </div>
-          <div class="bagproductInfo">
-            <h3 class="bagName">Bibbi Nylon</h3>
-            <p>Color: <span class="bagColor">light blue</span></p>
-            <p>Quantity: <span class="bagQuantity">2</span></p>
-            <p class="bagproductPrice">1200 DKK</p>
-            <div class="lineS"></div>
-          </div> -->
-        </div>
-
-        <!-- <div class="orderItem">
-          <div class="bagproductImg">
-            <img
-              src="https://anasofich.github.io/SILFEN-website/photos/bibbi-nylon-green.jpg"
-            />
-          </div>
-          <div class="bagproductInfo">
-            <h3 class="bagName">Bibbi Nylon</h3>
-            <p>Color: <span class="bagColor">green</span></p>
-            <p>Quantity: <span class="bagQuantity">1</span></p>
-            <p class="bagproductPrice">600 DKK</p>
-            <div class="lineS"></div>
-          </div> -->
-          
-        </div>
-        <div class="lineL"></div>
-
-        <div class="orderPrice">
+          <div class="lineL"></div>
+          <div class="orderPrice">
             <div class="priceText">
               <p>Order value</p>
               <p>Delivery</p>
@@ -212,34 +197,38 @@
               <p class="subtotal">1800 DKK</p>
             </div>
           </div>
-    </div>
-
-<div class="itemsTwo">
-        <h1 class="shoppingBag">SHOPPING BAG TOTAL</h1>
-        <div class="orderPrice">
-          <div class="priceText">
-            <p>Order value</p>
-            <p>Delivery</p>
+        </div>
+        <div class="itemsTwo">
+          <h1 class="shoppingBag">SHOPPING BAG TOTAL</h1>
+          <div class="orderPrice">
+            <div class="priceText">
+              <p>Order value</p>
+              <p>Delivery</p>
+            </div>
+            <div class="priceAmount">
+              <p class="orderValue">1800 DKK</p>
+              <p class="delivery">FREE</p>
+            </div>
           </div>
-          <div class="priceAmount">
-            <p class="orderValue">1800 DKK</p>
-            <p class="delivery">FREE</p>
+          <div class="couponDiv">
+            <input type="text" name="coupon" placeholder="COUPON CODE" />
+            <button>Apply coupon</button>
+          </div>
+          <div class="lineL"></div>
+          <div class="subtotalFinal">
+            <p class="subtotal">SUBTOTAL</p>
+            <p class="subtotal">1800 DKK</p>
+          </div>
+          <div class="buttons">
+            <a href="shoppingflowPages/orderDetails.html"
+              ><button class="proceed b">PROCEED TO CHECKOUT</button></a
+            >
+            <a href="all_products_site/all_products_site.html"
+              ><button class="continue b">CONTINUE SHOPPING</button></a
+            >
           </div>
         </div>
-        <div class="couponDiv">
-          <input type="text" name="coupon" placeholder="COUPON CODE" />
-          <button>Apply coupon</button>
-        </div>
-        <div class="lineL"></div>
-        <div class="subtotalFinal">
-          <p class="subtotal">SUBTOTAL</p>
-          <p class="subtotal">1800 DKK</p>
-        </div>
-        <div class="buttons">
-            <a href="shoppingflowPages/orderDetails.html"><button class="proceed b">PROCEED TO CHECKOUT</button></a>
-            <a href="all_products_site/all_products_site.html"><button class="continue b">CONTINUE SHOPPING</button></a>
-        </div>
-    </div>
+      </div>
     </section>
 
     <template id="recBags">
@@ -253,7 +242,7 @@
     <section id="suggestions">
       <section class="recProducts"></section>
     </section>
-<!-- <section id="suggestions"> -->
+    <!-- <section id="suggestions"> -->
     <!-- <div class="bagOne">
         <img src="photos/alexandra.jpg">
         <p class="p"><b>ALEXANDRA</b></p>
@@ -280,93 +269,90 @@
        
     </div>
     </div> -->
-<!-- </section> -->
+    <!-- </section> -->
 
-<div class="navbar">
-  <li>
-    <a href="#"><img src="images/search.png" /></a>
-  </li>
-  <li>
-    <a href="#"><img src="images/lp_wishlist.svg" /></a>
-  </li>
-  <li>
-    <a href="shopping-bag.html"><img src="images/shopping_cart.svg" /></a>
-  </li>
-</div>
-
-<footer>
-  <section id="newsletter">
-    <p>
-      Sign up to our newsletter and <b>GET -10% OFF</b> your first order
-    </p>
-    <div class="input-group">
-      <label for="email"></label>
-      <input
-        type="text"
-        placeholder="Write your email here"
-        class="form-control"
-      />
+    <div class="navbar">
+      <li>
+        <a href="#"><img src="images/search.png" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="images/lp_wishlist.svg" /></a>
+      </li>
+      <li>
+        <a href="shopping-bag.html"><img src="images/shopping_cart.svg" /></a>
+      </li>
     </div>
-    <button class="signUp">SIGN ME UP</button>
-  </section>
 
-  <section id="terms_footer">
-    <ul>
-      <li>
-        <a href="#"><b>TERMS</b></a>
-      </li>
-      <li><a href="#">Terms & Conditions</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Cookie Policy</a></li>
-    </ul>
-  </section>
+    <footer>
+      <section id="newsletter">
+        <p>
+          Sign up to our newsletter and <b>GET -10% OFF</b> your first order
+        </p>
+        <div class="input-group">
+          <label for="email"></label>
+          <input
+            type="text"
+            placeholder="Write your email here"
+            class="form-control"
+          />
+        </div>
+        <button class="signUp">SIGN ME UP</button>
+      </section>
 
-  <section id="company_footer">
-    <ul>
-      <li>
-        <a href="#"><b>COMPANY</b></a>
-      </li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Sustainability</a></li>
-      <li><a href="#">Careers</a></li>
-    </ul>
-  </section>
+      <section id="terms_footer">
+        <ul>
+          <li>
+            <a href="#"><b>TERMS</b></a>
+          </li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </section>
 
-  <section id="footerSome">
-    <a href="https://www.instagram.com/silfenstudio/"
-      ><img src="images/insta.png"
-    /></a>
-    <a href="https://www.facebook.com/Silfenstudio"
-      ><img src="images/face.png"
-    /></a>
-    <a href="https://www.youtube.com/channel/UCwUsHwkGR4253v1iySaJJZw"
-      ><img src="images/youtube.png"
-    /></a>
-  </section>
+      <section id="company_footer">
+        <ul>
+          <li>
+            <a href="#"><b>COMPANY</b></a>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </section>
 
-  <section id="help_footer">
-    <ul>
-      <li>
-        <a href="#"><b>HELP</b></a>
-      </li>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Returns</a></li>
-      <li><a href="#">Shipping</a></li>
-      <li><a href="#">Payment</a></li>
-    </ul>
-  </section>
+      <section id="footerSome">
+        <a href="https://www.instagram.com/silfenstudio/"
+          ><img src="images/insta.png"
+        /></a>
+        <a href="https://www.facebook.com/Silfenstudio"
+          ><img src="images/face.png"
+        /></a>
+        <a href="https://www.youtube.com/channel/UCwUsHwkGR4253v1iySaJJZw"
+          ><img src="images/youtube.png"
+        /></a>
+      </section>
 
-  <section id="footerLinks">
-    <a href="help.html">HELP</a>
-    <a href="company.html">COMPANY</a>
-    <a href="terms.html">TERMS</a>
-  </section>
-</footer>
+      <section id="help_footer">
+        <ul>
+          <li>
+            <a href="#"><b>HELP</b></a>
+          </li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Payment</a></li>
+        </ul>
+      </section>
 
-
-   
+      <section id="footerLinks">
+        <a href="help.html">HELP</a>
+        <a href="company.html">COMPANY</a>
+        <a href="terms.html">TERMS</a>
+      </section>
+    </footer>
   </body>
   <script src="script.js"></script>
-<script src="basket-js.js"></script>
+  <script src="product-js.js"></script>
 </html>

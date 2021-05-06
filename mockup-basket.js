@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
-const url = "https://kea2021-907c.restdb.io/rest/bags/60819aad3e28515100031f11";
+const url = "https://kea2021-907c.restdb.io/rest/bags/" + id;
 // const mediaurl = "https://kea2021-907c.restdb.io/media/";
 
 /*API key*/
@@ -54,7 +54,7 @@ const CART = {
       // if there's anything there, turn it into 20 objects that we can access with the dot . notation
       CART.contents = JSON.parse(_contents);
     } else {
-      CART.contents = [
+      /*CART.contents = [
         {
           _id: "608187eb3e28515100031d8f",
           qty: 5,
@@ -104,7 +104,7 @@ const CART = {
           salePrice: "",
           typeOfTheBag: "BumbagsandCrossbodybags",
         },
-      ];
+      ];*/
     }
     // I want to update the
     //this.updateDOM(); use this when we're not hardcoding the contents, and the content is read from localStorage
